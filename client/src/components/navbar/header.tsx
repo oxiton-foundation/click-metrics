@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Search, Button, Avatar, AvatarFallback, AvatarImage } from "../ui/index"
+import { Search, Button, Avatar, AvatarFallback } from "../ui/index"
 
 
 const Header = () => {
