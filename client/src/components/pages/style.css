@@ -1,0 +1,112 @@
+.borderstyling{
+    border: 1px solid #ccc;
+  border-radius: 5px;
+  /* padding: 10px; */
+  padding-right: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imagestyling{
+    width: 150px;
+  height: 100px;
+
+}
+.boxborder{
+    border-style:solid;
+    border-color: blue;
+    border-width: 1px;
+    width: 35%;
+    height: 50%;
+    padding: 5px 5px 5px 5px;
+    justify-content: center;
+}
+.flexing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.backgroundof1stsection{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(221, 226, 226);
+}
+.outer{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin-right: 70px;
+
+}
+.boxing1{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    display:flex;
+    flex-direction: column;
+}
+.boxing2{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+    justify-items: center;
+    padding: 25px;
+}
+.boxing2 img{
+    margin: 0 auto;
+}
+.outerbox{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 70px;
+    
+}
+.btnblue{
+    background-color: rgb(8, 8, 233);
+    color: white;border: none;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 5px; /* Adjust border radius as needed */
+    cursor: pointer; /* Indicate interactivity on hover */
+  }
+  
+  .btnblue:hover {
+    background-color: #1780c3; /* Darker blue on hover */
+  }
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox-container label {
+    margin-left: 5px;
+  }
+  
+  .line-through {
+    text-decoration: line-through;
+  }
+
+  .button-container button {
+    margin-right: 15px;
+  }
+  .btnb{
+    background-color: rgb(254, 254, 255);
+    color: rgb(56, 8, 233);border: none;
+    padding: 5px 10px; /* Adjust padding as needed */
+    border-radius: 5px; /* Adjust border radius as needed */
+    cursor: pointer; /* Indicate interactivity on hover */
+    border: 2px solid blue;
+  }
+  .btnb:hover{
+    background-color: blue;
+    color: white;
+  }
