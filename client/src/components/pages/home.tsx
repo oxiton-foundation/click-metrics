@@ -1,8 +1,19 @@
-const Home = () => {
+import './style.css'
+import Home_section1  from './home_section1';
+import Middle from './Middle';
+
+const Home:React.FC = () => {
+    
     return (
-        <div className="bg-[#f4f6fa] w-full h-full">
-            <h1>This is a Home page</h1>
+        <>
+        <div className='backgroundof1stsection'>
+        <div style={{marginLeft:'50px'}}>
+        <Home_section1/>
+        <Middle />
         </div>
+        </div>
+        
+        </>
     );
 }
 
