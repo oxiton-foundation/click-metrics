@@ -110,3 +110,50 @@
     background-color: blue;
     color: white;
   }
+
+
+  #switch1,#switch2,#switch3 {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  #lab {
+    cursor: pointer;
+    text-indent: -9999px;
+    margin-top: 5px;
+    width: 40px;
+    height: 20px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  
+  #lab:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 20px;
+    height: 15px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+  
+  #switch1:checked + #lab,#switch2:checked + #lab,#switch3:checked + #lab {
+    background: #bada55;
+  }
+  
+  #switch1:checked + #lab:after,#switch2:checked + #lab:after,#switch3:checked + #lab:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  #lab:active:after {
+    width: 20px;
+  }
+  
+  
+  
