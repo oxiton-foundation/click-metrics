@@ -1,7 +1,15 @@
+import Linkscontent from './linkscontent';
+import './style.css'
+
+
+
 const Links = () => {
+
     return (
-        <div className="bg-[#f4f6fa] w-full h-full">
-            <h1>This is a Links page</h1>
+        <div style={{marginLeft:"120px"}}>
+        <div className="bg-[#fff] w-full h-full">
+            <Linkscontent />
+        </div>
         </div>
     );
 }
