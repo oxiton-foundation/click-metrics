@@ -23,17 +23,16 @@ const Todo: React.FC = () => {
 
   return (
 <>
-<div style={{border:"2px solid rgb(157, 157, 160)",padding:"15px",borderRadius:"5px"}}>
+<div className="border-2 border-[#9d9da0] p-4 rounded-md">
         {items.map((statement) => (
           <div key={statement.id} style={{ textDecoration: statement.checked ? 'line-through' : 'none' }}>
-            <button onClick={() => handleClick(statement.id)} style={{marginRight:"10px",padding:"5px"}}>
-              <input type='checkbox' style={{width:"20px",height:"20px"}}></input>
+            <button onClick={() => handleClick(statement.id)} className='mr-2 p-1.5'>
+              <input type='checkbox' className='w-5 h-5'></input>
             </button>
             <span>{statement.label}</span>
-            {/* <br></br> */}
-            <div className="button-container">
-        <button className='btnb'><a href='/links'>Create links</a></button>
-        <button className='btnb'><a href='/qr'>View QR code</a></button>
+            <div className="mr-4">
+        <button className="mr-4 bg-[#fefeff] text-[#3808e9] border-2px-blue px-2 py-1 rounded-md cursor-pointer border-2 border-blue-500 hover:bg-blue-500 hover:text-white"><a href='/links'>Create links</a></button>
+        <button className="mr-4 bg-[#fefeff] text-[#3808e9] border-2px-blue px-2 py-1 rounded-md cursor-pointer border-2 border-blue-500 hover:bg-blue-500 hover:text-white"><a href='/qr'>View QR code</a></button>
       </div>
           </div>
         ))}

@@ -1,5 +1,4 @@
 import React from 'react';
-import './DonutChart.css';
 
 interface DonutChartProps {
   percentage: number;
@@ -14,7 +13,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ percentage, color }) => {
   return (
     <svg width="100" height="90" viewBox="10 15 1 32" className="donut">
       <circle
-        className="donut-ring"
+        className="donut-ring transition-stroke-dasharray duration-350 transform rotate-0 origin-center"
         cx="21"
         cy="21"
         r={radius}
@@ -23,7 +22,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ percentage, color }) => {
         strokeWidth="3"
       />
       <circle
-        className="donut-segment"
+        className="transition-stroke-dasharray duration-350 transform rotate-0 origin-center"
         cx="21"
         cy="21"
         r={radius}
@@ -33,7 +32,8 @@ const DonutChart: React.FC<DonutChartProps> = ({ percentage, color }) => {
         strokeDasharray={strokeDasharray}
         strokeDashoffset="25"
       />
-      <text x="21" y="21" className="donut-text" textAnchor="middle" dy=".3em">{`${percentage}%`}</text>
+     <text x="21" y="21" className="font-sans text-[4px] text-gray-700" text-anchor="middle" dy=".3em">{`${percentage}%`}</text>
+
     </svg>
   );
 };
