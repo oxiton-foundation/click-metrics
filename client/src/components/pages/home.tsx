@@ -1,4 +1,3 @@
-import './style.css'
 import Home_section1  from './home_section1';
 import Middle from './Middle';
 
@@ -6,8 +5,8 @@ const Home:React.FC = () => {
     
     return (
         <>
-        <div className='backgroundof1stsection'>
-        <div style={{marginLeft:'50px'}}>
+        <div className='bg-gray-200 p-5'>
+        <div className="ml-10">
         <Home_section1/>
         <Middle />
         </div>
