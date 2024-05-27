@@ -2,7 +2,6 @@ import { Avatar, AvatarFallback, Button } from "../ui/index"
 
 const ProfileDropdown = () => {
 
-
     return (
         <>
             <div className='absolute right-0 top-full w-64 flex gap-4 flex-col justify-around py-6 px-8 bg-white border-2 border-gray-300 shadow-md rounded-md cursor-default'>
