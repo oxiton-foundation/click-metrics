@@ -1,8 +1,17 @@
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Search, Button, Avatar, AvatarFallback } from "../ui/index"
+import ProfileDropdown from './profile-dropdown';
 
 
 const Header = () => {
+
+    const [dropDownIsActive, setDropdownIsActive] = useState<boolean>(false);
+
+    const closeProfileDropdown = () => {
+        setDropdownIsActive(false);
+    }
+
     return (
         <>
             <div className='w-full'>
@@ -13,7 +22,7 @@ const Header = () => {
 
                         <Button className="cursor-pointer bg-green-700 hover:bg-green-800">Upgrade</Button>
 
-                        <div className="flex gap-4 items-center cursor-pointer hover:bg-[#f4f6fa] py-[0.2rem] px-4 rounded-md">
+                        <div onClick={() => setDropdownIsActive(!dropDownIsActive)} onMouseLeave={closeProfileDropdown} className={`flex gap-4 items-center cursor-pointer hover:bg-[#f4f6fa] ${dropDownIsActive ? 'bg-[#f4f6fa]' : ''} py-[0.2rem] px-4 rounded-md relative`}>
                             <Avatar>
                                 {/* <AvatarImage src="https://github.com/shadcn.png" /> */}
                                 <AvatarFallback>KS</AvatarFallback>
@@ -22,8 +31,15 @@ const Header = () => {
                                 <h1>Krishna Singha</h1>
                                 <i className="fa-solid fa-sort-down"></i>
                             </div>
-                        </div>
+                            
+                            {
+                                dropDownIsActive 
+                                ? <ProfileDropdown />
+                                : <> </>
+                            }
 
+                        </div>
+                        
                     </nav>
                 </div>
                 <Outlet />
