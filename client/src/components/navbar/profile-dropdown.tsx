@@ -1,6 +1,23 @@
 import { Avatar, AvatarFallback, Button } from "../ui/index"
 
+interface ProfileDropdownLinkProps {
+    text: string;
+    onClick: () => void;
+    className?: string;
+}
+
 const ProfileDropdown = () => {
+
+    const ProfileDropDownLink = ({onClick, text, className}: ProfileDropdownLinkProps) => {
+        return (
+            <div 
+                className={`${className} h-10 py-2 underline-offset-4 hover:underline cursor-pointer`}
+                onClick={onClick}
+            >
+                {text}
+            </div>
+        );
+    }
 
     return (
         <>
@@ -12,11 +29,11 @@ const ProfileDropdown = () => {
                     </Avatar>
                     <h1 className="font-bold">Krishna Singha</h1>
                 </div>
-                <div className="flex flex-col">
-                    <Button variant='link' className='text-green-700' onClick={() => alert('Placeholder')}>Unlock Premium</Button>
-                    <Button variant='link' onClick={() => alert('Profile page still needs to be implemented.')}>View Profile</Button>
-                    <Button variant='link' onClick={() => alert('Settings page still needs to be implemented.')}>Settings</Button>
-                    <Button variant='link' onClick={() => alert('Placeholder')}>Help</Button>
+                <div className="flex flex-col font-bold">
+                    <ProfileDropDownLink text='Unlock Premium' className='text-green-700' onClick={() => alert('Placeholder')}/>
+                    <ProfileDropDownLink text='View Profile' className='text-primary' onClick={() => alert('Profile page still needs to be implemented.')}/>
+                    <ProfileDropDownLink text='Settings' className='text-primary' onClick={() => alert('Settings page still needs to be implemented.')}/>
+                    <ProfileDropDownLink text='Help' className='text-primary' onClick={() => alert('Placeholder')}/>
                 </div>
                 <Button variant='destructive' onClick={() => alert('Auth still needs to be implemented.')}>Log Out</Button>
             </div>
