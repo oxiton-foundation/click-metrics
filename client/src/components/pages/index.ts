@@ -6,6 +6,7 @@ import Analytics from "./analytics";
 import Campaigns from "./campaigns";
 import CustomLinks from "./custom-links";
 import Settings from "./settings";
+import Help from "./help";
 
 export {
     Home,
@@ -15,5 +16,6 @@ export {
     Analytics,
     Campaigns,
     CustomLinks,
-    Settings
+    Settings,
+    Help
 }

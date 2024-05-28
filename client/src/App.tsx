@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import Template from "./components/navbar/template"
-import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings } from "./components/pages/index"
+import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings,Help } from "./components/pages/index"
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
           <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/custom/links" element={<CustomLinks />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/help" element={<Help />} />
         </Route>
       </Routes>
     </>
