@@ -25,7 +25,7 @@ $ git clone https://github.com/oxiton-foundation/click-metrics.git
 ```
 2. Change directory
 ```
-$ cd click-metrics/
+$ cd click-metrics
 ```
 3. Navigate to client folder
 ```
