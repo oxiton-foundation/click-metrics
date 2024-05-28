@@ -15,7 +15,7 @@ const Header = () => {
     return (
         <>
             <div className='w-full'>
-                <div className='pt-4 pb-3 px-4 border-b-[1.5px] border-[#dbe0eb]'>
+                <div className='pt-4 pb-3 px-4 border-b-[1.5px] border-[#dbe0eb] bg-white sticky top-0'>
                     <nav className='flex justify-end gap-6 items-center'>
 
                         <Search />
