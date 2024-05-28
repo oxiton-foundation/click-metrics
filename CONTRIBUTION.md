@@ -15,13 +15,57 @@ So by now you understood what this project is about but what exactly we would be
 The goal of this repo is to create multiple games (we are not focused on one game but we would be making many small-big adventure games with their own stories)
 To acheive this task we need to follow these steps.
 1. Fork the repo
-2. Create a new folder (IMP) and start creating your gaming files
-3. Issues would be sub divided meaning, a game can be divided into sub parts, one issue for making prompts, one for creating gaming assets like characters and last one for creating actual game python file
-4. After doing your task make a pull request
-5. Make sure you do not change someone else file.
-6. Plagiarism is big no and doing so may result in lost of ranks and ban from repo.
-7. Based on efforts levels will be given
-8. If any issue contact me on tusharamd#5800 on discord
+2. Create a new folder at your desired location (IMP) and start creating your gaming files
+3. Clone your forked repository of the project.
+```
+$ git clone https://github.com/<your_username>/repository_name.git
+```
+4. Navigate to the project directory.
+```
+$ cd click-metrics
+```
+5.Add a reference(remote) to the original repository.
+```
+git remote add upstream https://github.com/repository_owner/repository_name.git
+```
+6. Check the remotes for this repository.
+```
+git remote -v
+```
+7. Always take a pull from the upstream repository to your main branch to keep it updated as per the main project repository.
+```
+git pull upstream main
+```
+8. Create a new branch (prefer a branch name that relates to your assigned issue).
+```
+git checkout -b <YOUR_BRANCH_NAME>
+```
+9. Perform your desired changes to the code base.
+10. After making the required changes. Check your changes.
+```
+git status OR git diff
+```
+11. Stage your changes.
+```
+git add . <\files_that_you_made_changes>
+```
+12. Commit your changes.
+```
+git commit -m "relavant message"
+```
+13. Push the committed changes in your feature branch to your remote repository.
+```
+git push -u origin <your_branch_name>
+```
+14. To create a pull request, click on compare and pull request.
+
+
+- Issues would be sub divided meaning, a game can be divided into sub parts, one issue for making prompts, one for creating gaming assets like characters and last one for creating actual game python file
+- After doing your task make a pull request
+- Make sure you do not change someone else file.
+- Plagiarism is big no and doing so may result in lost of ranks and ban from repo.
+- Based on efforts levels will be given
+- If any issue contact me on tusharamd#5800 on discord
 
 <br>
 
