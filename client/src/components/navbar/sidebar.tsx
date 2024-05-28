@@ -5,7 +5,7 @@ const Sidebar = () => {
     return (
         <div className='border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4'>
             <div className="w-full flex justify-center my-6">
-                <span className="text-2xl font-bold text-[#0c3ebb]">Click-Matrics</span>
+                <span className="text-2xl font-bold text-[#0c3ebb]"><img src={"/click-metrics-logo-edited.png"} alt="LOGO" /></span>
             </div>
             <Button className="w-full mt-4 mb-2">Create New</Button>
             <hr className="my-4"/>
