@@ -7,7 +7,10 @@ const Sidebar = () => {
             <div className="w-full flex justify-center my-6">
                 <span className="text-2xl font-bold text-[#0c3ebb]"><a href="/"><img src={"/click-metrics-logo-edited.png"} alt="LOGO" /></a></span>
             </div>
-            <Button className="w-full mt-4 mb-2">Create New</Button>
+            <a href="/links" className="block w-full mt-4 mb-2">
+  <Button className="w-full">Create New</Button>
+</a>
+
             <hr className="my-4"/>
             <div className="flex flex-col gap-3">
                 <NavLink
