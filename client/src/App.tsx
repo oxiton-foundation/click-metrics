@@ -4,14 +4,13 @@ import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Set
 
 
 function App() {
-
   return (
     <>
       <Routes>
         <Route path="/" element={<Template />} >
           <Route path="/" element={<Home />} />
           <Route path="/links" element={<Links />} />
-          <Route path="/qr" element={<QrCodes />} />
+          <Route path="/qr" element={<QrCodes url="www.google.com" />} /> 
           <Route path="/link/in/bio" element={<LinkInBio />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/campaigns" element={<Campaigns />} />
@@ -21,7 +20,7 @@ function App() {
         </Route>
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
