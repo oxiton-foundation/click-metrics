@@ -40,7 +40,8 @@ npm i
 npm run dev
 ```
 6. Then go to
-```http://localhost:5173/
+```
+http://localhost:5173/
 ```
 
 ### To get started with Click Matrics, follow these steps:
