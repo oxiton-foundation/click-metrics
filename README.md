@@ -18,7 +18,7 @@ Click Matrics is a URL shortening and analytics platform designed to streamline 
 
 ## Getting Started
 
-# To run locally, follow the given steps:
+### To run locally, follow the given steps:
 1. Clone the repository
 ```
 $ git clone https://github.com/oxiton-foundation/click-metrics.git
@@ -43,7 +43,7 @@ npm run dev
 ```http://localhost:5173/
 ```
 
-# To get started with Click Matrics, follow these steps:
+### To get started with Click Matrics, follow these steps:
 1. **Sign Up:** Create an account on Click Matrics to access all features.
 2. **Shorten URLs:** Paste your long URLs into the provided field and generate short links instantly.
 3. **Generate QR Codes:** Download QR codes for each shortened URL to facilitate offline sharing.
