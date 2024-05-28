@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, Button } from "../ui/index"
+import { useNavigate } from "react-router-dom";
 
 interface ProfileDropdownLinkProps {
     text: string;
@@ -7,6 +8,7 @@ interface ProfileDropdownLinkProps {
 }
 
 const ProfileDropdown = () => {
+    const navigate = useNavigate();
 
     const ProfileDropDownLink = ({onClick, text, className}: ProfileDropdownLinkProps) => {
         return (
@@ -17,6 +19,10 @@ const ProfileDropdown = () => {
                 {text}
             </div>
         );
+    }
+
+    const handleHelpClick = () => {
+        navigate('/help'); // Navigate to /help page
     }
 
     return (
@@ -33,7 +39,7 @@ const ProfileDropdown = () => {
                     <ProfileDropDownLink text='Unlock Premium' className='text-green-700' onClick={() => alert('Placeholder')}/>
                     <ProfileDropDownLink text='View Profile' className='text-primary' onClick={() => alert('Profile page still needs to be implemented.')}/>
                     <ProfileDropDownLink text='Settings' className='text-primary' onClick={() => alert('Settings page still needs to be implemented.')}/>
-                    <ProfileDropDownLink text='Help' className='text-primary' onClick={() => alert('Placeholder')}/>
+                    <ProfileDropDownLink text='Help' className='text-primary' onClick={handleHelpClick}/>
                 </div>
                 <Button variant='destructive' onClick={() => alert('Auth still needs to be implemented.')}>Log Out</Button>
             </div>
