@@ -17,8 +17,33 @@ Click Matrics is a URL shortening and analytics platform designed to streamline 
 - **Exportable Reports:** Export analytics reports for further analysis or sharing with stakeholders.
 
 ## Getting Started
-To get started with Click Matrics, follow these steps:
 
+# To run locally, follow the given steps:
+1. Clone the repository
+```
+$ git clone https://github.com/oxiton-foundation/click-metrics.git
+```
+2. Change directory
+```
+$ cd click-metrics/
+```
+3. Navigate to client folder
+```
+cd client
+```
+4. Install npm dependencies
+```
+npm i
+```
+5. Run
+```
+npm run dev
+```
+6. Then go to
+```http://localhost:5173/
+```
+
+# To get started with Click Matrics, follow these steps:
 1. **Sign Up:** Create an account on Click Matrics to access all features.
 2. **Shorten URLs:** Paste your long URLs into the provided field and generate short links instantly.
 3. **Generate QR Codes:** Download QR codes for each shortened URL to facilitate offline sharing.
