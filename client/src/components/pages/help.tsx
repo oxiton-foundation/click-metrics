@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from 'react'
 
 import { Field, Label, Switch } from '@headlessui/react'
@@ -8,7 +7,6 @@ function classNames(...classes: string[]): string {
 }
 
 const Home = () => {
-  const navigate = useNavigate();
   const [agreed, setAgreed] = useState(false);
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault(); // Prevent the form from submitting
@@ -17,7 +15,6 @@ const Home = () => {
 
   return (
     <>
-      {/* Adjusted padding */}
         <div
           className=" absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
           aria-hidden="true"
