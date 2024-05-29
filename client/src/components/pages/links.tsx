@@ -25,10 +25,10 @@ const Links = () => {
     };
     return (
         <>
-            <div className="ml-24">
-                <div className="bg-white w-full h-full">
+            <div className="container mx-auto px-4 md:px-0">
+                <div className="bg-white p-8 md:p-12">
                     <p className="text-4xl font-bold"><b>Create New</b></p>
-                    <div className='mt-4'>
+                    <div className='mb-8'>
                         <label htmlFor="inputField">Destination</label><br></br>
                         <input
                             type="text"
@@ -36,7 +36,7 @@ const Links = () => {
                             value={inputValue}
                             onChange={handleChange}
                             placeholder='https://example.com/my-long-url'
-                            className={`border ${isValid ? 'border-500' : 'border-red-500'} p-2 w-96`}
+                            className={`border ${isValid ? 'border-500' : 'border-red-500'} p-2 w-full md:w-96`}
                         />
 
                         {!isValid && <span className="text-red-500 m-2">Invalid URL format</span>}
@@ -44,25 +44,25 @@ const Links = () => {
                         <span>You can create 12 more links this month.</span>
                     </div>
 
-                    <div className="mt-10">
+                    <div className="mt-8">
                         <label htmlFor='title' className="font-bold"><b>Title</b> (optional)</label><br></br>
-                        <input type='text' id='title' className={`border p-2 w-48`} placeholder='My First Blog'/>
-                        <Button className="mt-4 m-2">
+                        <input type='text' id='title' className={`border p-2 w-full md:w-48`} placeholder='My First Blog'/>
+                        <Button className="mt-4">
                             Pick a random title
                         </Button>
                     </div>
-                    <div className="">
+                    <div className="mb-8">
                         <label htmlFor='description' className="font-bold"><b>Description</b> (optional)</label><br></br>
-                        <textarea id='description'className='border w-[600px] p-2' placeholder='My first blog page URL'/>
+                        <textarea id='description'className='border w-full p-2' placeholder='My first blog page URL'/>
                     </div>
 
                     <h1 className="text-2xl font-bold mt-5">Ways to share</h1><h3 className="font-bold">Short link</h3>
 
-                    <div className="flex">
+                    <div className="flex mb-8">
                         <p className='text-2xl font-bold flex items-center'>
                             click.me/
                         </p>
-                        <input type='text' id='custom' className="border p-2 w-80 m-2" placeholder='my-first-blog'/>
+                        <input type='text' id='custom' className="border p-2 w-full md:w-80 ml-2" placeholder='my-first-blog'/>
                     </div>
                     <div>
                         <Button className="mt-4 m-2">
