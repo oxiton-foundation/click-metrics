@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import Template from "./components/navbar/template"
 import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings,Help } from "./components/pages/index"
-
+import Profile from "./components/pages/profile";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route path="/custom/links" element={<CustomLinks />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
     </>

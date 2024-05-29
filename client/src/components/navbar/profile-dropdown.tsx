@@ -37,8 +37,8 @@ const ProfileDropdown = () => {
                 </div>
                 <div className="flex flex-col font-bold">
                     <ProfileDropDownLink text='Unlock Premium' className='text-green-700' onClick={() => alert('Placeholder')}/>
-                    <ProfileDropDownLink text='View Profile' className='text-primary' onClick={() => alert('Profile page still needs to be implemented.')}/>
-                    <ProfileDropDownLink text='Settings' className='text-primary' onClick={() => alert('Settings page still needs to be implemented.')}/>
+                    <ProfileDropDownLink text='View Profile' className='text-primary' onClick={() => navigate('./profile')}/>
+                    <ProfileDropDownLink text='Settings' className='text-primary' onClick={() => alert('Settings page ')}/>
                     <ProfileDropDownLink text='Help' className='text-primary' onClick={handleHelpClick}/>
                 </div>
                 <Button variant='destructive' onClick={() => alert('Auth still needs to be implemented.')}>Log Out</Button>
