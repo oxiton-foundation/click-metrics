@@ -8,7 +8,7 @@ const Home = () => {
             <div className='p-5'>
                 <div className="ml-10">
                     <h1 className="text-2xl font-bold">Your Connections Platform</h1>
-                    <div className="flex flex-col lg:flex-row">
+                    <div className="flex flex-wrap gap-4 max-w-xl md:max-w-full">
                         <div className="border border-gray-300 rounded-md p-4 m-4 flex items-center">
                             <div>
                                 <p className="text-center">
