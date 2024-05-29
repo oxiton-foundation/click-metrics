@@ -3,7 +3,7 @@ import { Button } from "../ui";
 
 const Sidebar = () => {
     return (
-        <div className='border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4'>
+        <div className='border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4 sticky top-0 left-0 h-full bg-white'>
             <div className="w-full flex justify-center my-6">
                 <span className="text-2xl font-bold text-[#0c3ebb]"><a href="/"><img src={"/click-metrics-logo-edited.png"} alt="LOGO" /></a></span>
             </div>
