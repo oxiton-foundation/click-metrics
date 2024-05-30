@@ -6,7 +6,8 @@ const Profile = () => {
   return (
     <>
       <div className="flex">
-        <section className="bg-gradient-to-r from-yellow-300 to-orange-500 h-screen w-96 flex flex-col">
+      <section className="bg-gradient-to-r from-yellow-300 to-orange-500 h-screen w-96 flex flex-col" style={{ background: 'linear-gradient(to right, rgba(253, 224, 71, 0.5), rgba(251, 146, 60, 0.5))' }}>
+
           <img src={R} alt="profile picture" className="h-36 w-36 rounded-full mx-auto mt-16" />
           <div className="text-center mt-8">
             <h1 className="text-2xl font-semibold text-gray-700">John Doe</h1>
