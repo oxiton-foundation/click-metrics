@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-white dark:bg-black fixed top-0 left-0 w-full z-50">
       <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between ">
             <div className="">
               <Link className="text-lg font-semibold font-[verdana] text-black dark:text-white" to="/">
                 Click Matrics
@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
               />
             </div>
             <div className="w-[200px] flex items-center justify-evenly">
-              <Button variant="secondary">Sign up</Button>
+              <Button variant="secondary" className="">Sign up</Button>
               <Button variant="secondary">Log In</Button>
             </div>
           </div>
@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            className="md:hidden flex flex-col items-center justify-center w-full bg-white dark:bg-black"
+            className="md:hidden flex flex-col items-center justify-center w-full bg-gray-200 dark:bg-black"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 mx-auto text-center">
               <MobileNavItem href="/">Home</MobileNavItem>
@@ -95,10 +95,10 @@ const Navbar: React.FC = () => {
               <MobileNavItem href="/feedback">About</MobileNavItem>
             </div>
             <div className="flex flex-col mx-auto">
-              <Button variant="default">Sign up</Button>
+              <Button variant="default" className="mb-2">Sign up</Button>
               <Button variant="default">Log In</Button>
             </div>
-            <div className="mt-4 flex justify-center space-x-2">
+            <div className="mt-4 flex justify-center space-x-2 mb-4">
               <FaSun
                 className={`cursor-pointer ${theme === 'light' ? 'text-yellow-500' : 'text-gray-500'}`}
                 onClick={() => setTheme('light')}
