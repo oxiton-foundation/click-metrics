@@ -3,11 +3,14 @@ import { Button } from "../ui";
 
 const Sidebar = () => {
     return (
-        <div className='border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4'>
+        <div className='border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4 sticky top-0 left-0 h-full bg-white'>
             <div className="w-full flex justify-center my-6">
-                <span className="text-2xl font-bold text-[#0c3ebb]">Click-Matrics</span>
+                <span className="text-2xl font-bold text-[#0c3ebb]"><a href="/"><img src={"/click-metrics-logo-edited.png"} alt="LOGO" /></a></span>
             </div>
-            <Button className="w-full mt-4 mb-2">Create New</Button>
+            <a href="/links" className="block w-full mt-4 mb-2">
+  <Button className="w-full">Create New</Button>
+</a>
+
             <hr className="my-4"/>
             <div className="flex flex-col gap-3">
                 <NavLink
