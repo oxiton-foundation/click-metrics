@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import { Search, Button, Avatar, AvatarFallback } from "../ui/index"
 import ProfileDropdown from './profile-dropdown';
 
-
 const Header = () => {
 
     const [dropDownIsActive, setDropdownIsActive] = useState<boolean>(false);
@@ -31,15 +30,15 @@ const Header = () => {
                                 <h1>Krishna Singha</h1>
                                 <i className="fa-solid fa-sort-down"></i>
                             </div>
-                            
+
                             {
-                                dropDownIsActive 
-                                ? <ProfileDropdown />
-                                : <> </>
+                                dropDownIsActive
+                                    ? <ProfileDropdown />
+                                    : <> </>
                             }
 
                         </div>
-                        
+
                     </nav>
                 </div>
                 <Outlet />
