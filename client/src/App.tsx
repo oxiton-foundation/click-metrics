@@ -1,12 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Route, Routes } from "react-router-dom"
 import Template from "./components/navbar/template"
-<<<<<<< HEAD
-import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings } from "./components/pages/index"
 import { ThemeProvider } from 'next-themes';
 import Landing from "./landing/Landing"
-=======
 import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings,Help } from "./components/pages/index"
->>>>>>> 36ddfe0db40e82d69a0e7c766b72bcbebd10ee42
 
 
 function App() {
