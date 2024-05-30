@@ -50,7 +50,7 @@ const CardUtil: React.FC = () => {
               <p>{card.content}</p>
             </CardContent>
             <CardFooter>
-              <Button variant="secondary">Deploy</Button>
+              <Button className="transition ease-in-out delay-150 bg-white hover:-translate-y-1 hover:scale-110 hover:bg-gray-300 duration-300" variant="secondary">Deploy</Button>
             </CardFooter>
           </Card>
         ))}
