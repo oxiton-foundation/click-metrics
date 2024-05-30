@@ -1,78 +1,109 @@
-import React from 'react'
-import { useState } from 'react';
-import { Button } from '../ui';
-// Function to validate URL syntax
-const isValidURL = (url: string): boolean => {
-    const urlPattern = new RegExp(
-        '^(https?:\\/\\/)?' + // protocol
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' + // domain name
-        '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-        '(\\:\\d+)?' + // port
-        '(\\/[-a-z\\d%_.~+]*)*' + // path
-        '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-        '(\\#[-a-z\\d_]*)?$', 'i' // fragment locator
-    );
-    return !!urlPattern.test(url);
-};
+import { Button } from "../ui";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { SubmitHandler, useForm } from "react-hook-form";
+
 const Links = () => {
-    const [inputValue, setInputValue] = useState<string>('');
-    const [isValid, setIsValid] = useState<boolean>(true);
+	type Inputs = {
+		url: string;
+		title?: string;
+		description?: string;
+		custom?: string;
+	};
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target.value;
-        setInputValue(value);
-        setIsValid(isValidURL(value));
-    };
-    return (
-        <>
-            <div className="container mx-auto px-4 md:px-0">
-                <div className="bg-white p-8 md:p-12">
-                    <p className="text-4xl font-bold"><b>Create New</b></p>
-                    <div className='mb-8'>
-                        <label htmlFor="inputField">Destination</label><br></br>
-                        <input
-                            type="text"
-                            id="inputField"
-                            value={inputValue}
-                            onChange={handleChange}
-                            placeholder='https://example.com/my-long-url'
-                            className={`border ${isValid ? 'border-500' : 'border-red-500'} p-2 w-full md:w-96`}
-                        />
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<Inputs>();
+	const onSubmitdata: SubmitHandler<Inputs> = (formData) =>
+		console.log(formData);
 
-                        {!isValid && <span className="text-red-500 m-2">Invalid URL format</span>}
-                        <br />
-                        <span>You can create 12 more links this month.</span>
-                    </div>
+	return (
+		<>
+			<form onSubmit={handleSubmit(onSubmitdata)} noValidate>
+				<div className="container mx-auto px-4 md:px-0">
+					<div className="flex flex-col gap-6 bg-white p-8 md:p-12">
+						<Label className="text-4xl font-semibold" htmlFor="url">
+							Create New
+						</Label>
+						<div>
+							<div className="grid gap-3">
+								<Label htmlFor="url">Destination</Label>
+								<Input
+									id="url"
+									type="text"
+									placeholder="http://www.example.com"
+									{...register("url", {
+										required: "Destination URL is required",
+										pattern: {
+											value: /^(https?:\/\/)?((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|((\d{1,3}\.){3}\d{1,3}))(:\d+)?(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(#[-a-z\d_]*)?$/i,
+											message: "Enter a valid URL",
+										},
+									})}
+								/>
+								<p className="text-red-500 text-sm">
+									{errors.url && errors.url.message}
+								</p>
+							</div>
+							<span>
+								You can create 12 more links this month.
+							</span>
+						</div>
 
-                    <div className="mt-8">
-                        <label htmlFor='title' className="font-bold"><b>Title</b> (optional)</label><br></br>
-                        <input type='text' id='title' className={`border p-2 w-full md:w-48`} placeholder='My First Blog'/>
-                        <Button className="mt-4">
-                            Pick a random title
-                        </Button>
-                    </div>
-                    <div className="mb-8">
-                        <label htmlFor='description' className="font-bold"><b>Description</b> (optional)</label><br></br>
-                        <textarea id='description'className='border w-full p-2' placeholder='My first blog page URL'/>
-                    </div>
+						<div className="grid gap-3">
+							<Label htmlFor="title" className="font-semibold">
+								Title (optional)
+							</Label>
+							<Input
+								type="text"
+								id="title"
+								className="border p-2 w-full"
+								placeholder="My First Blog"
+								{...register("title")}
+							/>
+							<Button>Pick a random title</Button>
+						</div>
+						<div className="grid gap-3">
+							<Label
+								htmlFor="description"
+								className="font-smeibold"
+							>
+								Description (optional)
+							</Label>
+							<Textarea
+								placeholder="Type your description here."
+								id="description"
+								{...register("description")}
+							/>
+						</div>
 
-                    <h1 className="text-2xl font-bold mt-5">Ways to share</h1><h3 className="font-bold">Short link</h3>
-
-                    <div className="flex mb-8">
-                        <p className='text-2xl font-bold flex items-center'>
-                            click.me/
-                        </p>
-                        <input type='text' id='custom' className="border p-2 w-full md:w-80 ml-2" placeholder='my-first-blog'/>
-                    </div>
-                    <div>
-                        <Button className="mt-4 m-2">
-                            Generate short link
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
+						<h1 className="text-2xl font-bold mt-5">
+							Ways to share
+						</h1>
+						<div className="grid gap-3">
+							<Label className="font-semibold text-xl">
+								Short link
+							</Label>
+							<div className="flex mb-8">
+								<p className="text-2xl font-bold flex items-center">
+									click.me/
+								</p>
+								<Input
+									type="text"
+									id="custom"
+									className="border p-2 w-full md:w-80 ml-2"
+									placeholder="my-first-blog"
+									{...register("custom")}
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</>
+	);
+};
 
 export default Links;
