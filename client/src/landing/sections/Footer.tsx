@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 const Footer: React.FC = () => {
   return (
     <>
-      <main className='w-full mt-[20%]'>
+      <main className='w-full mt-[40%] sm:mt-[20%]'>
       <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 w-[80%] sm:w-[30%] mx-auto sm:text-center">
       Quick Links
     </h2>
