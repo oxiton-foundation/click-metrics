@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "react-google-charts": "^4.0.1"
+    "react-google-charts": "^4.0.1",
+    "react-spinners": "^0.13.8"
   }
 }

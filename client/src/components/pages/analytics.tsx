@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import { ClipLoader } from "react-spinners";
 import LineChart from "../charts/line_chart";
 import PieChart from "../charts/pie_chart";
 import DateFilter from "../charts/date_filter";
@@ -6,7 +8,28 @@ import BarChart from "../charts/bar_chart";
 import GeoChart from "../charts/geo_chart";
 import { Button } from "../ui";
 import LocationCard from "../charts/location_card";
+
 const Analytics = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a data loading process
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust the timeout as needed
+
+    // Clean up the timer
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <ClipLoader color="#3498db" loading={loading} size={150} />
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="flex relative">
@@ -15,7 +38,7 @@ const Analytics = () => {
       </div>
       <p className="p-2 text-blue-500 bg-[#f4f6fa]">
         This is an example of our new Analytics dashboard using sample
-        Data.Upgrade to dispplay your data in real time and make this report
+        Data. Upgrade to display your data in real time and make this report
         actionable.
       </p>
 
