@@ -41,11 +41,11 @@ const CardUtil: React.FC = () => {
   return (
     <>
         {cardContent.map((card) => (
-          <Card className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4" key={card.id}>
+          <Card className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 mb-8 sm:mb-0" key={card.id}>
             <CardHeader>
               <CardTitle>{card.title}</CardTitle>
             </CardHeader>
-            <img src={card.imageUrl} alt={card.title} className="w-full h-[15rem]" />
+            <img src={card.imageUrl} alt={card.title} className="w-full h-[15rem] py-4 sm:py-0" />
             <CardContent>
               <p>{card.content}</p>
             </CardContent>

@@ -65,31 +65,31 @@ const testimonials:TestimonialType[] = [
     <>
     <Carousel
       plugins={[plugin.current]}
-      className="w-full p-8 w-1/2 mx-auto"
+      className="w-full p-4 md:p-8"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
         {testimonials.map((testimonial) => (
           <CarouselItem key={testimonial.id}>
-            <div className="p-4">
-              <Card className="flex flex-col sm:flex-row items-center py-8">
+            <div className="p-4 sm:w-2/3 flex mx-auto">
+              <Card className="flex flex-col sm:flex-row items-center py-8 mx-auto px-[5%]">
                 <img
                   src={testimonial.imageUrl}
                   alt={testimonial.name}
-                  className="w-28 h-28 rounded-full object-cover sm:mr-4 ml-16"
+                  className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mx-auto mb-4 sm:mb-0"
                 />
-                <CardContent className="flex flex-col sm:flex-row items-center sm:items-start mx-auto">
-                  <div className="sm:w-2/3 mx-auto">
+                <CardContent className="flex flex-col sm:flex-row items-center sm:items-start w-full sm:w-2/3 mx-auto">
+                  <div className="text-center sm:text-left">
                     <p className="font-semibold mb-2">{testimonial.name}</p>
                     <p className="text-sm text-gray-600">{testimonial.review}</p>
-                    <div className="flex mx-auto justify-center mt-4">
+                    <div className="flex justify-center sm:justify-start mt-4">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <svg
                           key={i}
                           xmlns="http://www.w3.org/2000/svg"
                           className={`h-5 w-5 ${
-                            i < testimonial.rating ? "text-yellow-500" : "text-gray-300"
+                            i < testimonial.rating ? 'text-yellow-500' : 'text-gray-300'
                           }`}
                           viewBox="0 0 20 20"
                           fill="currentColor"
