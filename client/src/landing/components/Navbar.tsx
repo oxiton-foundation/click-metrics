@@ -49,13 +49,13 @@ const Navbar: React.FC = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <div className="flex items-center space-x-2">
+            <FaMoon
+                className={`cursor-pointer ${theme === 'dark' ? 'text-yellow-500' : 'text-gray-500'}`}
+                onClick={() => setTheme('dark')}
+              />
               <FaSun
                 className={`cursor-pointer ${theme === 'light' ? 'text-yellow-500' : 'text-gray-500'}`}
                 onClick={() => setTheme('light')}
-              />
-              <FaMoon
-                className={`cursor-pointer ${theme === 'dark' ? 'text-yellow-500' : 'text-gray-500'}`}
-                onClick={() => setTheme('dark')}
               />
             </div>
             <div className="w-[200px] flex items-center justify-evenly">
