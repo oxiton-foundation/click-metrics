@@ -11,8 +11,6 @@ permissions:
 jobs:
   comment:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     if: github.event.pull_request.merged == true
 
     steps:
