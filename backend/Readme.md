@@ -1,3 +1,4 @@
+
 # Express.js Backend Project
 
 This is a backend project built with Express.js and Node.js, providing a foundation for building web applications and APIs.
@@ -11,7 +12,6 @@ This is a backend project built with Express.js and Node.js, providing a foundat
     - [Installation](#installation)
     - [Running the Server](#running-the-server)
   - [Project Structure Details](#project-structure-details)
-  
 
 ## Project Structure
 
@@ -19,10 +19,10 @@ This is a backend project built with Express.js and Node.js, providing a foundat
 .
 ├── app.js          # Entry point of the application
 ├── index.js        # Main file to start the server
-├── constants.js    # Constants and configuration variables
+├── constant.js    # Constants and configuration variables
 ├── .env            # Environment variables (not included in the repository)
-├── env.sample # Sample environment variables file
-├── .gitignore # Git ignore file
+├── env.sample      # Sample environment variables file
+├── .gitignore      # Git ignore file
 └── src             # Source code directory
     ├── controllers # Controllers for handling route logic
     ├── db          # Database connection and setup
@@ -57,7 +57,7 @@ npm start
 
 - **app.js**: Entry point of the application where the Express app is configured.
 - **index.js**: Main file to start the server.
-- **constants.js**: Contains constants and configuration variables used throughout the project.
+- **constant.js**: Contains constants and configuration variables used throughout the project.
 - **.env**: Environment variables file (not included in the repository).
 - **env.sample**: Sample environment variables file.
 - **.gitignore**: Git ignore file.
@@ -69,5 +69,8 @@ npm start
   - **routes**: Route definitions for handling different HTTP requests.
   - **utils**: Utility functions used across the project.
 
+**Authentication Routes and User Model:**
+- **controllers/user.controller.js**: Contains routes for user authentication (signup and signin).
+- **models/user.model.js**: Defines the user model with fields for username, email, password, etc.
 
 
