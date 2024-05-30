@@ -1,0 +1,385 @@
+{
+  "overTime": [
+    {
+      "date": "2024-05-01",
+      "total_count": 120,
+      "locationCounts": [
+        { "id": 1, "count": 40 },
+        { "id": 2, "count": 30 },
+        { "id": 3, "count": 20 },
+        { "id": 4, "count": 10 },
+        { "id": 5, "count": 5 },
+        { "id": 6, "count": 5 },
+        { "id": 7, "count": 3 },
+        { "id": 8, "count": 2 },
+        { "id": 9, "count": 3 },
+        { "id": 10, "count": 2 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 50 },
+        { "id": 2, "count": 25 },
+        { "id": 3, "count": 20 },
+        { "id": 4, "count": 15 },
+        { "id": 5, "count": 10 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 40 },
+        { "id": 2, "count": 30 },
+        { "id": 3, "count": 20 },
+        { "id": 4, "count": 15 },
+        { "id": 5, "count": 10 },
+        { "id": 6, "count": 5 },
+        { "id": 7, "count": 10 }
+      ]
+    },
+    {
+      "date": "2024-05-03",
+      "total_count": 135,
+      "locationCounts": [
+        { "id": 1, "count": 45 },
+        { "id": 2, "count": 33 },
+        { "id": 3, "count": 22 },
+        { "id": 4, "count": 11 },
+        { "id": 5, "count": 6 },
+        { "id": 6, "count": 6 },
+        { "id": 7, "count": 4 },
+        { "id": 8, "count": 3 },
+        { "id": 9, "count": 3 },
+        { "id": 10, "count": 2 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 56 },
+        { "id": 2, "count": 28 },
+        { "id": 3, "count": 22 },
+        { "id": 4, "count": 17 },
+        { "id": 5, "count": 12 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 45 },
+        { "id": 2, "count": 33 },
+        { "id": 3, "count": 22 },
+        { "id": 4, "count": 17 },
+        { "id": 5, "count": 11 },
+        { "id": 6, "count": 7 },
+        { "id": 7, "count": 10 }
+      ]
+    },
+    {
+      "date": "2024-05-04",
+      "total_count": 150,
+      "locationCounts": [
+        { "id": 1, "count": 50 },
+        { "id": 2, "count": 35 },
+        { "id": 3, "count": 25 },
+        { "id": 4, "count": 12 },
+        { "id": 5, "count": 7 },
+        { "id": 6, "count": 7 },
+        { "id": 7, "count": 5 },
+        { "id": 8, "count": 4 },
+        { "id": 9, "count": 4 },
+        { "id": 10, "count": 3 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 63 },
+        { "id": 2, "count": 31 },
+        { "id": 3, "count": 25 },
+        { "id": 4, "count": 19 },
+        { "id": 5, "count": 12 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 50 },
+        { "id": 2, "count": 35 },
+        { "id": 3, "count": 25 },
+        { "id": 4, "count": 19 },
+        { "id": 5, "count": 12 },
+        { "id": 6, "count": 9 },
+        { "id": 7, "count": 10 }
+      ]
+    },
+    {
+      "date": "2024-05-05",
+      "total_count": 165,
+      "locationCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 13 },
+        { "id": 5, "count": 8 },
+        { "id": 6, "count": 8 },
+        { "id": 7, "count": 6 },
+        { "id": 8, "count": 5 },
+        { "id": 9, "count": 5 },
+        { "id": 10, "count": 3 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 70 },
+        { "id": 2, "count": 35 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 12 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 13 },
+        { "id": 6, "count": 11 },
+        { "id": 7, "count": 10 }
+      ]
+    },
+    {
+      "date": "2024-05-06",
+      "total_count": 165,
+      "locationCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 13 },
+        { "id": 5, "count": 8 },
+        { "id": 6, "count": 8 },
+        { "id": 7, "count": 6 },
+        { "id": 8, "count": 5 },
+        { "id": 9, "count": 5 },
+        { "id": 10, "count": 3 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 70 },
+        { "id": 2, "count": 35 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 12 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 13 },
+        { "id": 6, "count": 11 },
+        { "id": 7, "count": 10 }
+      ]
+    },
+    {
+      "date": "2024-05-07",
+      "total_count": 165,
+      "locationCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 13 },
+        { "id": 5, "count": 8 },
+        { "id": 6, "count": 8 },
+        { "id": 7, "count": 6 },
+        { "id": 8, "count": 5 },
+        { "id": 9, "count": 5 },
+        { "id": 10, "count": 3 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 70 },
+        { "id": 2, "count": 35 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 12 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 13 },
+        { "id": 6, "count": 11 },
+        { "id": 7, "count": 10 }
+      ]
+    },
+    {
+      "date": "2024-05-08",
+      "total_count": 165,
+      "locationCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 13 },
+        { "id": 5, "count": 8 },
+        { "id": 6, "count": 8 },
+        { "id": 7, "count": 6 },
+        { "id": 8, "count": 5 },
+        { "id": 9, "count": 5 },
+        { "id": 10, "count": 3 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 70 },
+        { "id": 2, "count": 35 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 12 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 13 },
+        { "id": 6, "count": 11 },
+        { "id": 7, "count": 10 }
+      ]
+    },
+    {
+      "date": "2024-05-09",
+      "total_count": 165,
+      "locationCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 13 },
+        { "id": 5, "count": 8 },
+        { "id": 6, "count": 8 },
+        { "id": 7, "count": 6 },
+        { "id": 8, "count": 5 },
+        { "id": 9, "count": 5 },
+        { "id": 10, "count": 3 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 70 },
+        { "id": 2, "count": 35 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 12 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 13 },
+        { "id": 6, "count": 11 },
+        { "id": 7, "count": 10 }
+      ]
+    },
+    {
+      "date": "2024-05-10",
+      "total_count": 165,
+      "locationCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 13 },
+        { "id": 5, "count": 8 },
+        { "id": 6, "count": 8 },
+        { "id": 7, "count": 6 },
+        { "id": 8, "count": 5 },
+        { "id": 9, "count": 5 },
+        { "id": 10, "count": 3 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 70 },
+        { "id": 2, "count": 35 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 12 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 13 },
+        { "id": 6, "count": 11 },
+        { "id": 7, "count": 10 }
+      ]
+    },
+    {
+      "date": "2024-05-11",
+      "total_count": 165,
+      "locationCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 13 },
+        { "id": 5, "count": 8 },
+        { "id": 6, "count": 8 },
+        { "id": 7, "count": 6 },
+        { "id": 8, "count": 5 },
+        { "id": 9, "count": 5 },
+        { "id": 10, "count": 3 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 70 },
+        { "id": 2, "count": 35 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 12 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 55 },
+        { "id": 2, "count": 38 },
+        { "id": 3, "count": 27 },
+        { "id": 4, "count": 21 },
+        { "id": 5, "count": 13 },
+        { "id": 6, "count": 11 },
+        { "id": 7, "count": 10 }
+      ]
+    },
+
+    {
+      "date": "2024-05-12",
+      "total_count": 280,
+      "locationCounts": [
+        { "id": 1, "count": 93 },
+        { "id": 2, "count": 70 },
+        { "id": 3, "count": 47 },
+        { "id": 4, "count": 23 },
+        { "id": 5, "count": 14 },
+        { "id": 6, "count": 9 },
+        { "id": 7, "count": 7 },
+        { "id": 8, "count": 6 },
+        { "id": 9, "count": 6 },
+        { "id": 10, "count": 50 }
+      ],
+      "deviceCounts": [
+        { "id": 1, "count": 117 },
+        { "id": 2, "count": 59 },
+        { "id": 3, "count": 47 },
+        { "id": 4, "count": 35 },
+        { "id": 5, "count": 22 }
+      ],
+      "referrerCounts": [
+        { "id": 1, "count": 93 },
+        { "id": 2, "count": 70 },
+        { "id": 3, "count": 47 },
+        { "id": 4, "count": 33 },
+        { "id": 5, "count": 23 },
+        { "id": 6, "count": 14 },
+        { "id": 7, "count": 10 }
+      ]
+    }
+  ],
+  "locations": [
+    { "id": 1, "name": "United States" },
+    { "id": 2, "name": "United Kingdom" },
+    { "id": 3, "name": "Canada" },
+    { "id": 4, "name": "Australia" },
+    { "id": 5, "name": "Germany" },
+    { "id": 6, "name": "France" },
+    { "id": 7, "name": "Japan" },
+    { "id": 8, "name": "China" },
+    { "id": 9, "name": "India" },
+    { "id": 10, "name": "Brazil" }
+  ],
+  "devices": [
+    { "id": 1, "name": "Desktop" },
+    { "id": 2, "name": "E-reader" },
+    { "id": 3, "name": "Tablet" },
+    { "id": 4, "name": "Mobile" },
+    { "id": 5, "name": "Unknown" }
+  ],
+  "referrers": [
+    { "id": 1, "name": "LinkedIn" },
+    { "id": 2, "name": "Facebook" },
+    { "id": 3, "name": "Google" },
+    { "id": 4, "name": "Twitter" },
+    { "id": 5, "name": "Bitly" },
+    { "id": 6, "name": "Direct" },
+    { "id": 7, "name": "Other" }
+  ]
+}
