@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <>
       <main className='w-full mt-[20%]'>
-      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 text-center w-[30%] mx-auto">
+      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 w-[80%] sm:w-[30%] mx-auto sm:text-center">
       Quick Links
     </h2>
         <footer className="w-full flex items-center py-8">
