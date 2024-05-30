@@ -9,8 +9,14 @@ import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Set
 function App() {
   return (
     <>
-      {/* <Routes>
-        <Route path="/" element={<Template />} >
+      <Routes>
+        <Route path="/" element={<ThemeProvider attribute="class">
+      <div>
+        <main className="mt-16 p-4">
+          <Landing />
+        </main>
+      </div>
+    </ThemeProvider>} >
           <Route path="/" element={<Home />} />
           <Route path="/links" element={<Links />} />
           <Route path="/qr" element={<QrCodes url="www.google.com" />} /> 
@@ -21,16 +27,8 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/help" element={<Help />} />
         </Route>
-      </Routes> */}
+      </Routes>
 
-    
-<ThemeProvider attribute="class">
-      <div>
-        <main className="mt-16 p-4">
-          <Landing />
-        </main>
-      </div>
-    </ThemeProvider>
     </>
   );
 }
