@@ -1,16 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../ui";
+import { Box } from '@mui/material';
 
 const Home = () => {
     const navigate = useNavigate()
     return (
         <>
-            <div className='p-5'>
-                <div className="ml-10">
+            <Box className='p-5'>
+                <Box className="ml-10">
                     <h1 className="text-2xl font-bold">Your Connections Platform</h1>
-                    <div className="flex flex-wrap gap-4 max-w-xl md:max-w-full">
-                        <div className="border border-gray-300 rounded-md p-4 m-4 flex items-center">
-                            <div>
+                    <Box className="flex flex-wrap gap-4 max-w-xl md:max-w-full">
+                        <Box className="border border-gray-300 rounded-md p-4 m-4 flex items-center">
+                            <Box>
                                 <p className="text-center">
                                     Make it short
                                 </p>
@@ -19,10 +20,10 @@ const Home = () => {
                                     className="border border-blue-500 p-2 inline-block  m-2">
                                     Go to the Link
                                 </Button>
-                            </div>
-                        </div>
-                        <div className="border border-gray-300 rounded-md p-4 m-4 flex items-center">
-                            <div>
+                            </Box>
+                        </Box>
+                        <Box className="border border-gray-300 rounded-md p-4 m-4 flex items-center">
+                            <Box>
                                 <p className="text-center">
                                     Make it scannable
                                 </p>
@@ -31,10 +32,10 @@ const Home = () => {
                                     className="border border-blue-500 p-2 inline-block  m-2">
                                     Go to QR Codes
                                 </Button>
-                            </div>
-                        </div>
-                        <div className="border border-gray-300 rounded-md p-4 m-4 flex items-center">
-                            <div>
+                            </Box>
+                        </Box>
+                        <Box className="border border-gray-300 rounded-md p-4 m-4 flex items-center">
+                            <Box>
                                 <p className="text-center">
                                     Make a page
                                 </p>
@@ -43,11 +44,11 @@ const Home = () => {
                                     className="border border-blue-500 p-2 inline-block m-2">
                                     Go to Link in Bio
                                 </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            </Box>
+                        </Box>
+                    </Box>
+                </Box>
+            </Box>
         </>
     );
 }

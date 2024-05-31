@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import QRCode from 'qrcode.react';
 import { saveAs } from 'file-saver';
+import { Box ,useTheme} from '@mui/material';
 
 const QrCodes = ({ url }: { url: string }) => {
-    const [darkMode, setDarkMode] = useState<boolean>(false);
-
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    }, [darkMode]);
+   
 
     const downloadQRCode = () => {
         const canvas = document.getElementById('qrCode') as HTMLCanvasElement;
@@ -22,12 +15,12 @@ const QrCodes = ({ url }: { url: string }) => {
         }
     };
 
-    
+    const theme=useTheme()
 
     return (
-        <div className={`flex flex-col items-center justify-center min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
+        <Box bgcolor={theme.palette.background.paper}className="flex flex-col items-center justify-center min-h-screen ">
             
-            <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <Box className="p-4 rounded-lg shadow-lg">
                 <QRCode id="qrCode" value={url} size={256} className="rounded-md" />
                 <button 
                     onClick={downloadQRCode} 
@@ -35,8 +28,8 @@ const QrCodes = ({ url }: { url: string }) => {
                 >
                     Download QR Code
                 </button>
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 };
 

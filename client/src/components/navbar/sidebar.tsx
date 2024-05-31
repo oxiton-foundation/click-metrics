@@ -1,21 +1,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../ui';
+import { Box ,useTheme} from '@mui/material';
 
 const Sidebar = ({ darkMode }) => {
+    const theme=useTheme()
     return (
-        <div className={`border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4 sticky top-0 left-0 h-full bg-white dark:bg-gray-900`}>
-            <div className="w-full flex justify-center my-6">
+        <Box bgcolor={theme.palette.background.paper}className={`border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4 sticky top-0 left-0 h-full `}>
+            <Box bgcolor={theme.palette.background.paper}className="w-full flex justify-center my-6">
                 <span className="text-2xl font-bold text-[#0c3ebb] dark:text-white">
                     <a href="/"><img src={"/click-metrics-logo-edited.png"} alt="LOGO" /></a>
                 </span>
-            </div>
+            </Box>
             <a href="/links" className="block w-full mt-4 mb-2">
-                <Button className="w-full">Create New</Button>
+                <Button className="w-full" sx={{text:theme.palette.text}}>Create New</Button>
             </a>
 
             <hr className="my-4 dark:border-gray-700" />
-            <div className="flex flex-col gap-3">
+            <Box bgcolor={theme.palette.background.paper}className="flex flex-col gap-3">
                 <NavLink
                     to="/"
                     className={({ isActive }) =>
@@ -24,7 +26,7 @@ const Sidebar = ({ darkMode }) => {
                             : "text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
                         }`
                     }>
-                    <i className="fa-solid fa-house"></i>
+                    <i className="fa-solid fa-house" sx={{text:theme.palette.text}}></i>
                     Home
                 </NavLink>
                 <NavLink
@@ -35,7 +37,7 @@ const Sidebar = ({ darkMode }) => {
                             : "text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
                         }`
                     }>
-                    <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                    <i className="fa-solid fa-arrow-up-right-from-square" sx={{text:theme.palette.text}}></i>
                     Links
                 </NavLink>
                 <NavLink
@@ -46,7 +48,7 @@ const Sidebar = ({ darkMode }) => {
                             : "text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
                         }`
                     }>
-                    <i className="fa-solid fa-qrcode"></i>
+                    <i className="fa-solid fa-qrcode" sx={{text:theme.palette.text}}></i>
                     QR Codes
                 </NavLink>
                 <NavLink
@@ -57,7 +59,7 @@ const Sidebar = ({ darkMode }) => {
                             : "text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
                         }`
                     }>
-                    <i className="fa-solid fa-paperclip"></i>
+                    <i className="fa-solid fa-paperclip"sx={{text:theme.palette.text}}></i>
                     Link-in-bio
                 </NavLink>
                 <NavLink
@@ -68,7 +70,7 @@ const Sidebar = ({ darkMode }) => {
                             : "text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
                         }`
                     }>
-                    <i className="fa-solid fa-chart-simple"></i>
+                    <i className="fa-solid fa-chart-simple"sx={{text:theme.palette.text}}></i>
                     Analytics
                 </NavLink>
                 <NavLink
@@ -79,7 +81,7 @@ const Sidebar = ({ darkMode }) => {
                             : "text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
                         }`
                     }>
-                    <i className="fa-solid fa-compass"></i>
+                    <i className="fa-solid fa-compass"sx={{text:theme.palette.text}}></i>
                     Campaigns
                 </NavLink>
                 <NavLink
@@ -90,7 +92,7 @@ const Sidebar = ({ darkMode }) => {
                             : "text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
                         }`
                     }>
-                    <i className="fa-solid fa-link"></i>
+                    <i className="fa-solid fa-link"sx={{text:theme.palette.text}}></i>
                     Custom Links
                 </NavLink>
                 <hr className="dark:border-gray-700" />
@@ -102,11 +104,11 @@ const Sidebar = ({ darkMode }) => {
                             : "text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
                         }`
                     }>
-                    <i className="fa-solid fa-gear"></i>
+                    <i className="fa-solid fa-gear" sx={{text:theme.palette.text}}></i>
                     Settings
                 </NavLink>
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 }
 

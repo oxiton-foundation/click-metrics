@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from '../ui';
+import React, { useState } from 'react';
+import { Button, Box, useTheme, Typography, TextField, TextareaAutosize } from '@mui/material';
 
 // Function to validate URL syntax
 const isValidURL = (url: string): boolean => {
@@ -18,78 +18,77 @@ const isValidURL = (url: string): boolean => {
 const Links = () => {
     const [inputValue, setInputValue] = useState<string>('');
     const [isValid, setIsValid] = useState<boolean>(true);
-    const [darkMode, setDarkMode] = useState<boolean>(false);
-
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    }, [darkMode]);
-
+    
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setInputValue(value);
         setIsValid(isValidURL(value));
     };
 
-   
+    const theme = useTheme();
 
     return (
-        <>
-            <div className="container mx-auto px-4 md:px-0">
-                <div className="bg-white dark:bg-gray-800 p-8 md:p-12 text-black dark:text-white">
-                    <div className="flex justify-between items-center">
-                        <p className="text-4xl font-bold"><b>Create New</b></p>
-                       
-                    </div>
-                    <div className='mb-8'>
-                        <label htmlFor="inputField">Destination</label><br />
-                        <input
-                            type="text"
-                            id="inputField"
-                            value={inputValue}
-                            onChange={handleChange}
-                            placeholder='https://example.com/my-long-url'
-                            className={`border ${isValid ? 'border-500' : 'border-red-500'} p-2 w-full md:w-96 dark:bg-gray-900 dark:border-gray-700`}
-                        />
+        <Box className="container mx-auto px-4 md:px-0" bgcolor={theme.palette.background.paper}>
+            <Box className="p-8 md:p-12 text-black dark:text-white">
+                <Box className="flex justify-between items-center">
+                    <Typography variant="h4" fontWeight="bold" sx={{ color: theme.palette.text.primary }}>Create New</Typography>
+                </Box>
+                <Box className="mb-8">
+                    <label htmlFor="inputField">Destination</label><br />
+                    <TextField
+                        id="inputField"
+                        value={inputValue}
+                        onChange={handleChange}
+                        placeholder='https://example.com/my-long-url'
+                        fullWidth
+                        variant="outlined"
+                        error={!isValid}
+                        helperText={!isValid && "Invalid URL format"}
+                    />
+                    <Typography sx={{ color: theme.palette.text.primary }}>You can create 12 more links this month.</Typography>
+                </Box>
 
-                        {!isValid && <span className="text-red-500 m-2">Invalid URL format</span>}
-                        <br />
-                        <span>You can create 12 more links this month.</span>
-                    </div>
+                <Box className="mt-8">
+                    <label htmlFor='title' className="font-bold">Title (optional)</label><br />
+                    <TextField
+                        id='title'
+                        fullWidth
+                        variant="outlined"
+                        placeholder='My First Blog'
+                        className=""
+                    />
+                    <Button className="mt-4" variant="contained">Pick a random title</Button>
+                </Box>
+                <Box className="mb-8">
+                    <label htmlFor='description' className="font-bold">Description (optional)</label><br />
+                    <TextareaAutosize
+                        id='description'
+                        minRows={3}
+                        style={{ width: '100%', padding: '8px', borderColor: '#ccc' }}
+                        placeholder='My first blog page URL'
+                        className=""
+                    />
+                </Box>
 
-                    <div className="mt-8">
-                        <label htmlFor='title' className="font-bold"><b>Title</b> (optional)</label><br />
-                        <input type='text' id='title' className={`border p-2 w-full md:w-48 dark:bg-gray-900 dark:border-gray-700`} placeholder='My First Blog' />
-                        <Button className="mt-4">
-                            Pick a random title
-                        </Button>
-                    </div>
-                    <div className="mb-8">
-                        <label htmlFor='description' className="font-bold"><b>Description</b> (optional)</label><br />
-                        <textarea id='description' className='border w-full p-2 dark:bg-gray-900 dark:border-gray-700' placeholder='My first blog page URL' />
-                    </div>
+                <Typography variant="h5" fontWeight="bold" sx={{ color: theme.palette.text.primary, marginTop: '16px' }}>Ways to share</Typography>
+                <Typography variant="h6" fontWeight="bold" sx={{ color: theme.palette.text.primary }}>Short link</Typography>
 
-                    <h1 className="text-2xl font-bold mt-5">Ways to share</h1>
-                    <h3 className="font-bold">Short link</h3>
-
-                    <div className="flex mb-8">
-                        <p className='text-2xl font-bold flex items-center'>
-                            click.me/
-                        </p>
-                        <input type='text' id='custom' className="border p-2 w-full md:w-80 ml-2 dark:bg-gray-900 dark:border-gray-700" placeholder='my-first-blog' />
-                    </div>
-                    <div>
-                        <Button className="mt-4 m-2">
-                            Generate short link
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
+                <Box className="flex mb-8">
+                    <Typography variant="h6" fontWeight="bold" sx={{ color: theme.palette.text.primary, display: 'flex', alignItems: 'center' }}>
+                        click.me/
+                    </Typography>
+                    <TextField
+                        id='custom'
+                        fullWidth
+                        variant="outlined"
+                        placeholder='my-first-blog'
+                        className="  ml-2"
+                    />
+                </Box>
+                <Button variant="contained" className="mt-4 m-2">Generate short link</Button>
+            </Box>
+        </Box>
+    );
+};
 
 export default Links;

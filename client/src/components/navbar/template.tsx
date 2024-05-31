@@ -1,13 +1,14 @@
 import Header from "./header";
+import { Box } from '@mui/material';
 import Sidebar from "./sidebar";
 
-const Template = () => {
+const Template = ({theme}) => {
     return (
         <>
-            <div className="flex min-h-screen">
+            <Box className="flex min-h-screen">
                 <Sidebar />
-                <Header />
-            </div>
+                <Header theme={theme} />
+            </Box>
         </>
     );
 };
