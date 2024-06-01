@@ -23,6 +23,7 @@ Before submitting your pull request, ensure that you have completed the followin
 - [ ] Gone through the [rules and guidelines](https://github.com/oxiton-foundation/click-metrics/issues/24) of the project.
 - [ ] Pull request title follows the specified format: [Feature/Enhancement/Bug Fix]: Brief description of the change.
 - [ ] Attached OSSI or GSSoC in the heading of the Issue.
+- [ ] I have checked this issue is not already covered in another issue.
 
 ### Expected Time to Complete
 
