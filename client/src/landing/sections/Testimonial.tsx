@@ -1,4 +1,4 @@
-import React from 'react'
+"use client"
 import { TestimonialUtil } from '../components/TestimonialUtil'
 import { motion } from 'framer-motion'
 import { fadeIn} from '@/Motion/variants'

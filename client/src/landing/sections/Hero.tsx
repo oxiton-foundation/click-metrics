@@ -1,4 +1,4 @@
-import React from 'react';
+"use client"
 import HeroImg from "../../assets/n4.png";
 import { fadeIn, fadeIn4 } from '@/Motion/variants';
 import { motion } from 'framer-motion';

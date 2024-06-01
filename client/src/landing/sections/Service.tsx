@@ -1,4 +1,4 @@
-
+"use client"
 import CardUtil from '../components/CardUtil'
 
 const Service = () => {

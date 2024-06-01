@@ -1,4 +1,5 @@
-import { motion, Variants } from 'framer-motion';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Variants } from 'framer-motion';
 
 export const fadeIn = (duration: number): Variants => {
   return {
@@ -17,7 +18,7 @@ export const fadeIn = (duration: number): Variants => {
   };
 };
 
-export const fadeOut = (duration: number): Variants => {
+export const fadeOut = (_duration: number): Variants => {
   return {
     hidden: {
       opacity: 1,

@@ -1,3 +1,4 @@
+"use client"
 import { motion } from 'framer-motion'
 import { AccordionUtil } from '../components/AccordionUtil'
 import { fadeIn2 } from '@/Motion/variants'

@@ -1,3 +1,4 @@
+"use client"
 import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import Service from './sections/Service'
