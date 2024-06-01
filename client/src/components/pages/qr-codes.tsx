@@ -6,6 +6,7 @@ const QrCodes = ({ url }: { url: string }) => {
     const downloadQRCode = () => {
         const canvas = document.getElementById('qrCode') as HTMLCanvasElement;
         if (canvas) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             canvas.toBlob((blob: any) => {
                 saveAs(blob, 'qr_code.png');
             });
