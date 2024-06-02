@@ -17,7 +17,7 @@ const Template = () => {
                                         backgroundPosition: 'center',
                                     }}
                                 >
-                                    <h1 className="px-14 py-14 text-white font-bold text-4xl text-center">{slide.title}</h1>
+                                    <h1 className="px-10 py-14 text-white font-bold text-4xl text-center">{slide.title}</h1>
                                 </div>
                             </div>
                         ))}

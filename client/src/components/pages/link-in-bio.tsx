@@ -81,6 +81,7 @@ const LinkInBio = () => {
 
                             <Label className="font-bold text-2xl my-5" htmlFor="url">Pick themes</Label>
                             <Template />
+                            <Link to="/help" className="text-blue-700 text-center py-7">View more themes.</Link>
                         </div>
                     </div>
                 </div>
