@@ -75,8 +75,8 @@ const LinkInBio = () => {
                                 Share all your links with one URL
                             </h1>
                             <p className="text-gray-600">
-                                Build a beautiful page to share and manage all the links that matter to you. Bitly powers
-                                hundreds of thousands of Links-in-bios for creators and bussinesses of all kinds.
+                                The Bitly Link-in-bio is an easy-to-read, flexible way to organise and share
+                                your content with the power and reliability of Bitly short links. Take a look at these Link-in-bio examples.
                             </p>
 
                             <Label className="font-bold text-2xl my-5" htmlFor="url">Pick themes</Label>
