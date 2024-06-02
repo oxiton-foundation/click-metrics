@@ -1,8 +1,8 @@
 export const SlideCards = [
     {
         id: 1,
-        title: "Abstract",
-        backgroundImage: `url("/theme-imgs/Abstract.jpg")`,
+        title: "Floral",
+        backgroundImage: 'url("/theme-imgs/Floral.jpg")',
     },
     {
         id: 2,
@@ -15,9 +15,9 @@ export const SlideCards = [
         backgroundImage: 'url("/theme-imgs/Scenic.jpg")',
     },
     {
-        id: 4,
-        title: "Floral",
-        backgroundImage: 'url("/theme-imgs/Floral.jpg")',
+        id: 1,
+        title: "Abstract",
+        backgroundImage: `url("/theme-imgs/Abstract.jpg")`,
     },
     {
         id: 5,
