@@ -55,7 +55,7 @@ const LinkInBio = () => {
                                 }>
                                     Create Page</Button>
                             </div>
-                            <div className="w-auto h-14 bg-cyan-100 rounded-lg my-4 flex flex-wrap">
+                            <div className="w-auto h-auto bg-cyan-100 rounded-lg my-4 flex flex-wrap">
                                 <SparkleIcon />
                                 <div className="text-cyan-600 text-sm py-4 px-4">
                                     Brand your Link-in-bio with a custom domain! You'll even get a complimentary domain
