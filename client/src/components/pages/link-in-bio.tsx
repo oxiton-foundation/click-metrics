@@ -5,7 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Dropdown } from "../ui/dropdown";
 import { QuestionIcon, SparkleIcon } from "@/assets/icons";
 import { Link } from "react-router-dom";
-// import Template from "../themes/template"
+import Template from "../themes/template"
 
 const LinkInBio = () => {
     type Inputs = {
@@ -57,10 +57,10 @@ const LinkInBio = () => {
                             </div>
                             <div className="w-auto h-14 bg-cyan-100 rounded-lg my-4 flex flex-wrap">
                                 <SparkleIcon />
-                                <p className="text-cyan-600 text-sm py-4 px-4">
+                                <div className="text-cyan-600 text-sm py-4 px-4">
                                     Brand your Link-in-bio with a custom domain! You'll even get a complimentary domain
                                     when you <Link to="/help" className="font-semibold underline" > upgrade your plan</Link>.
-                                </p>
+                                </div>
                             </div>
                             <p className="text-black text-sm">
                                 Your plan includes <b>1</b> more Link-in-bios. <Link to="/help"><QuestionIcon /></Link>
@@ -79,8 +79,8 @@ const LinkInBio = () => {
                                 hundreds of thousands of Links-in-bios for creators and bussinesses of all kinds.
                             </p>
 
-                            <Label className="font-bold text-2xl my-5">Pick themes</Label>
-                            {/* <Template /> */}
+                            <Label className="font-bold text-2xl my-5" htmlFor="url">Pick themes</Label>
+                            <Template />
                         </div>
                     </div>
                 </div>
