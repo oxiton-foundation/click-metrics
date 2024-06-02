@@ -34,29 +34,3 @@ export const QuestionIcon = () => {
 
     );
 }
-
-export const ChevronLeftRegular = () => {
-    return (
-        <svg
-            className="w-4 h-4 inline-block ml-1 mb-1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            id="chevron-left">
-            <path d="M14,17a1,1,0,0,1-.71-.29l-4-4a1,1,0,0,1,0-1.41l4-4a1,1,0,0,1,1.41,1.41L11.41,12l3.29,3.29A1,1,0,0,1,14,17Z">
-            </path>
-        </svg>
-    );
-}
-
-export const ChevronRightRegular = () => {
-    return (
-        <svg
-            className="w-4 h-4 inline-block ml-1 mb-1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            id="chevron-right">
-            <path d="M10,17a1,1,0,0,1-.71-1.71L12.59,12,9.29,8.71a1,1,0,0,1,1.41-1.41l4,4a1,1,0,0,1,0,1.41l-4,4A1,1,0,0,1,10,17Z">
-            </path>
-        </svg>
-    );
-}
