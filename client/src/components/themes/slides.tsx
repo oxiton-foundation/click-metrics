@@ -1,43 +1,43 @@
-export const Slides = [
+export const SlideCards = [
     {
         id: 1,
-        title: "Abstract",
+        title: "Development",
         content: "Lorem ipsum dolor sit /amet, consectetur adipiscing elit.",
-        backgroundImage: 'url("click-metrics/client/public/theme-imgs/Abstract.jpg")',
+        backgroundImage: `url("click-metrics/client/public/theme-imgs/Abstract.jpg")`,
     },
     {
         id: 2,
-        title: "Cool",
+        title: "Branding",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         backgroundImage: 'url("click-metrics/client/public/theme-imgs/Cool.jpg")',
     },
     {
         id: 3,
-        title: "Scenic",
+        title: "Design",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         backgroundImage: 'url("click-metrics/client/public/theme-imgs/Scenic.jpg")',
     },
     {
         id: 4,
-        title: "Floral",
+        title: "Seo",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         backgroundImage: 'url("click-metrics/client/public/theme-imgs/Floral.jpg")',
     },
     {
         id: 5,
-        title: "Futuristic",
+        title: "Management",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         backgroundImage: 'url("click-metrics/client/public/theme-imgs/Futuristic.jpeg")',
     },
     {
         id: 6,
-        title: "Geometry",
+        title: "Production",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         backgroundImage: 'url("click-metrics/client/public/theme-imgs/Geometry.jpg")',
     },
     {
         id: 7,
-        title: "Space",
+        title: "Production",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         backgroundImage: 'url("click-metrics/client/public/theme-imgs/Space.png")',
     },
