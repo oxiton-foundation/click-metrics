@@ -40,7 +40,6 @@ const GeoChart: React.FC<GeoChartProps> = ({ className }) => {
     .map((item) => item.locationCounts[9].count)
     .reduce((a, b) => a + b, 0);
 
-  // console.log(id1,id2,id3,id4,id5,id6);
   let data;
 
   if (filtered_Data.length > 0) {
@@ -77,7 +76,6 @@ const GeoChart: React.FC<GeoChartProps> = ({ className }) => {
   const options = {
     title: "Total Clicks + Scans by Location-" + sum.toString(),
   };
-  console.log(overTime.devices[0].name);
 
   return (
     <div className={className}>
