@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Route, Routes } from "react-router-dom"
 import Template from "./components/navbar/template"
-import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings, Help } from "./components/pages/index"
 import Theme from "./components/pages/theme";
+import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings, Help, NotFoundPage } from "./components/pages/index"
 
 
 function App() {
@@ -19,8 +20,10 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/help" element={<Help />} />
           <Route path="/theme" element={<Theme />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
+
     </>
   );
 }
