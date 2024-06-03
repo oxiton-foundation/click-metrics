@@ -8,6 +8,7 @@ import Campaigns from "./campaigns";
 import CustomLinks from "./custom-links";
 import Settings from "./settings";
 import Help from "./help";
+import NotFoundPage from "./NoFoundPage";
 
 export {
     Home,
@@ -18,5 +19,6 @@ export {
     Campaigns,
     CustomLinks,
     Settings,
-    Help
+    Help,
+    NotFoundPage
 }
