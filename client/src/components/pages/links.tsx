@@ -1,109 +1,59 @@
-import { Button } from "../ui";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useState } from 'react';
+import axios from 'axios';
+import { Button } from '../ui'; // Ensure Button is properly imported
+import { message } from 'antd';
 
 const Links = () => {
-	type Inputs = {
-		url: string;
-		title?: string;
-		description?: string;
-		custom?: string;
-	};
+  const [inputValue, setInputValue] = useState('');
+  const [shortUrl, setShortUrl] = useState('');
 
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<Inputs>();
-	const onSubmitdata: SubmitHandler<Inputs> = (formData) =>
-		console.log(formData);
+  const handleSubmit = async () => {
+    if (!inputValue) {
+      message.error('Please enter a URL');
+      return;
+    }
 
-	return (
-		<>
-			<form onSubmit={handleSubmit(onSubmitdata)} noValidate>
-				<div className="container mx-auto px-4 md:px-0">
-					<div className="flex flex-col gap-6 bg-white p-8 md:p-12">
-						<Label className="text-4xl font-semibold" htmlFor="url">
-							Create New
-						</Label>
-						<div>
-							<div className="grid gap-3">
-								<Label htmlFor="url">Destination</Label>
-								<Input
-									id="url"
-									type="text"
-									placeholder="http://www.example.com"
-									{...register("url", {
-										required: "Destination URL is required",
-										pattern: {
-											value: /^(https?:\/\/)?((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|((\d{1,3}\.){3}\d{1,3}))(:\d+)?(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(#[-a-z\d_]*)?$/i,
-											message: "Enter a valid URL",
-										},
-									})}
-								/>
-								<p className="text-red-500 text-sm">
-									{errors.url && errors.url.message}
-								</p>
-							</div>
-							<span>
-								You can create 12 more links this month.
-							</span>
-						</div>
+    // Optional: Perform URL validation here if needed
 
-						<div className="grid gap-3">
-							<Label htmlFor="title" className="font-semibold">
-								Title (optional)
-							</Label>
-							<Input
-								type="text"
-								id="title"
-								className="border p-2 w-full"
-								placeholder="My First Blog"
-								{...register("title")}
-							/>
-							<Button>Pick a random title</Button>
-						</div>
-						<div className="grid gap-3">
-							<Label
-								htmlFor="description"
-								className="font-smeibold"
-							>
-								Description (optional)
-							</Label>
-							<Textarea
-								placeholder="Type your description here."
-								id="description"
-								{...register("description")}
-							/>
-						</div>
+    try {
+      const response = await axios.post('http://localhost:8001/url', { url: inputValue });
+      setShortUrl(`http://localhost:8001/${response.data.shortId}`);
+      setInputValue('');
+      message.success('Shortened URL created successfully');
+    } catch (error) {
+      console.error('Error shortening the URL:', error);
+      message.error('Error occurred. Please try again later.');
+    }
+  };
 
-						<h1 className="text-2xl font-bold mt-5">
-							Ways to share
-						</h1>
-						<div className="grid gap-3">
-							<Label className="font-semibold text-xl">
-								Short link
-							</Label>
-							<div className="flex mb-8">
-								<p className="text-2xl font-bold flex items-center">
-									click.me/
-								</p>
-								<Input
-									type="text"
-									id="custom"
-									className="border p-2 w-full md:w-80 ml-2"
-									placeholder="my-first-blog"
-									{...register("custom")}
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-			</form>
-		</>
-	);
+  const handleNavigate = () => {
+    window.open(shortUrl, '_blank');
+  };
+
+  return (
+    <div className="flex justify-around p-10">
+      <div className="w-1/2 p-4 bg-white shadow-md rounded-lg">
+        <h2 className="text-2xl font-bold mb-4">Enter URL</h2>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="https://example.com/my-long-url"
+          className="border p-2 w-full border-gray-300"
+        />
+        <Button className="mt-4" onClick={handleSubmit}>
+          Generate short link
+        </Button>
+        {shortUrl && (
+          <div className="mt-4">
+            <h3 className="text-lg font-semibold">Shortened URL</h3>
+            <p className="text-blue-500 cursor-pointer" onClick={handleNavigate}>
+              {shortUrl}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 };
-
-export default Links;
+ export default Links
