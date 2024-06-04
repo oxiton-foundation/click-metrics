@@ -1,11 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Route, Routes } from "react-router-dom"
+import { useState, useEffect } from "react";
 import Template from "./components/navbar/template"
 import Theme from "./components/pages/theme";
 import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings, Help, NotFoundPage } from "./components/pages/index"
-
+import Loader from "./components/ui/Loader";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <>
       <Routes>
