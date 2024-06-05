@@ -8,9 +8,8 @@ const Sidebar = () => {
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
-
   return (
-    <div className="flex">
+    <div className="flex fixed top-0 left-0 z-[100] md:static min-h-[100dvh]">
       <div
         className={`relative ${
           isSidebarVisible ? "w-64" : "w-16"
@@ -18,7 +17,9 @@ const Sidebar = () => {
       >
         <button
           onClick={toggleSidebar}
-          className="absolute top-4 right-[-2rem] z-50 bg-white text-black px-3 py-2 mr-4 rounded-full h-auto shadow-md"
+          className={`absolute top-4 ${
+            isSidebarVisible ? "right-[-2em]" : "right-[0rem] md:right-[-2em]"
+          } z-50 bg-white text-black px-3 py-2 mr-4 rounded-full h-auto shadow-md`}
         >
           {isSidebarVisible ? (
             <i className="fa-solid fa-xmark"></i>
@@ -28,8 +29,8 @@ const Sidebar = () => {
         </button>
 
         {isSidebarVisible && (
-          <div className="border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4 sticky top-0 left-0 h-full bg-white">
-            <div className="w-full flex justify-center my-6">
+          <div className="border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4 sticky top-0 left-0 h-full bg-white pt-6">
+            <div className="w-full flex justify-center mb-6">
               <span className="text-2xl font-bold text-[#0c3ebb]">
                 <a href="/">
                   <img src={"/click-metrics-logo-edited.png"} alt="LOGO" />
@@ -155,8 +156,7 @@ const Sidebar = () => {
         className={`flex-1 ${
           isSidebarVisible ? "ml-10" : "ml-16"
         } transition-margin duration-300`}
-      >
-      </div>
+      ></div>
     </div>
   );
 };
