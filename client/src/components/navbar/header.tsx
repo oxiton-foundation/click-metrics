@@ -2,8 +2,13 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Search, Button, Avatar, AvatarFallback } from "../ui/index";
 import ProfileDropdown from "./profile-dropdown";
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
+import { Search, Button, Avatar, AvatarFallback } from "../ui/index";
+import ProfileDropdown from "./profile-dropdown";
 
 const Header = () => {
+  const [dropDownIsActive, setDropdownIsActive] = useState<boolean>(false);
   const [dropDownIsActive, setDropdownIsActive] = useState<boolean>(false);
 
   const closeProfileDropdown = () => {
@@ -24,9 +29,8 @@ const Header = () => {
             <div
               onClick={() => setDropdownIsActive(!dropDownIsActive)}
               onMouseLeave={closeProfileDropdown}
-              className={`flex gap-4 items-center cursor-pointer hover:bg-[#f4f6fa] ${
-                dropDownIsActive ? "bg-[#f4f6fa]" : ""
-              } py-[0.2rem] px-0 md:px-4 rounded-md relative`}
+              className={`flex gap-4 items-center cursor-pointer hover:bg-[#f4f6fa] ${dropDownIsActive ? "bg-[#f4f6fa]" : ""
+                } py-[0.2rem] px-0 md:px-4 rounded-md relative`}
             >
               <Avatar>
                 {/* <AvatarImage src="https://github.com/shadcn.png" /> */}
