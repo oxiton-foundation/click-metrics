@@ -60,9 +60,9 @@ const LocationCard: React.FC<LocationCardProps> = ({ className }) => {
     <div className={className}>
       <div className="px-4 py-4">
         <div className="font-bold text-lg mb-2">Clicks+scans by location</div>
-        <div className="flex flex-col justify-center items-center">
+        <div >
           {top_three.map((item) => (
-            <div key={item.id}>
+            <div key={item.id} className="flex flex-col justify-center items-center">
               <h1 className="font-bold text-xl mb-2">
                 {overTime.locations[item.id].name}
               </h1>

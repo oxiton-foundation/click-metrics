@@ -57,7 +57,7 @@ const BarChart: React.FC<BarChartProps> = ({ className }) => {
     ];
   }
   const sum = id1 + id2 + id3 + id4 + id5 + id6 + id7;
-  // console.log(id1,id2,id3,id4,id5,id6,id7);
+
 
   const options = {
     title: "Clicks + Scans by refferer-" + sum.toString(),
@@ -69,7 +69,7 @@ const BarChart: React.FC<BarChartProps> = ({ className }) => {
       fontSize: 15,
     },
   };
-  console.log(overTime.devices[0].name);
+
 
   return (
     <div className={className}>
