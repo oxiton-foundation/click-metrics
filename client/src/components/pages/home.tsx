@@ -6,9 +6,9 @@ const Home = () => {
   return (
     <>
       <div className="p-5">
-        <div >
+        <div>
           <h1 className="text-2xl font-bold">Your Connections Platform</h1>
-          <div className="flex flex-wrap gap-4 max-w-xl md:max-w-full">
+          <div className="flex flex-wrap gap-4 max-w-xl md:max-w-full justify-center md:justify-normal m-auto">
             <div className="border border-gray-300 rounded-md p-4 m-4 flex items-center">
               <div>
                 <p className="text-center">Make it short</p>
