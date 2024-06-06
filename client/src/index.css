@@ -79,3 +79,57 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+/* Custom CSS for the toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round .slider-thumb {
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #10142c;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #10142c;
+}
+
+input:checked + .slider .slider-thumb {
+  transform: translateX(26px);
+}
+
+.slider-thumb {
+  position: absolute;
+  background-color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}

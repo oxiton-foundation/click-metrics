@@ -2,14 +2,10 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Search, Button, Avatar, AvatarFallback } from "../ui/index";
 import ProfileDropdown from "./profile-dropdown";
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
-import { Search, Button, Avatar, AvatarFallback } from "../ui/index";
-import ProfileDropdown from "./profile-dropdown";
 
 const Header = () => {
   const [dropDownIsActive, setDropdownIsActive] = useState<boolean>(false);
-  const [dropDownIsActive, setDropdownIsActive] = useState<boolean>(false);
+ 
 
   const closeProfileDropdown = () => {
     setDropdownIsActive(false);
