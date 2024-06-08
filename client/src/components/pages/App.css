@@ -1,6 +1,4 @@
-/* App.css */
-
-body {
+.container body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,6 +78,9 @@ body {
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.3s;
+    width: 200px;
+    /* display:flex ; */
+    justify-content: center;
   }
   
   .form_container button:hover {
