@@ -9,9 +9,7 @@ import {
 } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 
-const firebaseConfig = {
-
-};
+const firebaseConfig = {};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -68,7 +66,16 @@ const Signup = () => {
       navigate("/home");
     } catch (error) {
       console.error(error);
-      setError("Google sign-up failed");
+      switch (error.code) {
+        case "auth/popup-closed-by-user":
+          setError("Google sign-up was canceled by the user.");
+          break;
+        case "auth/popup-blocked":
+          setError("Google sign-up was blocked by the browser.");
+          break;
+        default:
+          setError("Google sign-up failed. Please try again later.");
+      }
     }
   };
 
