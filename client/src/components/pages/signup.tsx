@@ -1,22 +1,21 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 
 const firebaseConfig = {
- 
+
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -24,24 +23,7 @@ const Signup = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleGoogleSignup = async () => {
-    try {
-      const result = await signInWithPopup(auth, googleProvider);
-      const token = await result.user.getIdToken();
-      const user = result.user;
-      localStorage.setItem("token", token);
-      localStorage.setItem(
-        "user",
-        JSON.stringify({ email: user.email, displayName: user.displayName })
-      );
-      navigate("/home");
-    } catch (error) {
-      console.error(error);
-      setError("Google sign-up failed");
-    }
-  };
-
-  const handleEmailPasswordSignup = async (e: React.FormEvent) => {
+  const handleEmailPasswordSignup = async (e) => {
     e.preventDefault();
     try {
       const result = await createUserWithEmailAndPassword(
@@ -59,7 +41,34 @@ const Signup = () => {
       navigate("/home");
     } catch (error) {
       console.error(error);
-      setError("Email/Password sign-up failed");
+      switch (error.code) {
+        case "auth/email-already-in-use":
+          setError("Email is already in use. Please use another email.");
+          break;
+        case "auth/weak-password":
+          setError("Password should be at least 6 characters.");
+          break;
+        default:
+          setError("Sign up failed. Please try again later.");
+      }
+    }
+  };
+
+  const handleGoogleSignup = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const token = await result.user.getIdToken();
+      const user = result.user;
+      localStorage.setItem("token", token);
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ email: user.email, displayName: user.displayName })
+      );
+      navigate("/home");
+    } catch (error) {
+      console.error(error);
+      setError("Google sign-up failed");
     }
   };
 
@@ -106,7 +115,7 @@ const Signup = () => {
           <div className="mb-6">
             <button
               type="submit"
-              className="w-full px-4 py-2 hover:bg-transparent border-2 border-black hover:text-black transition-all bg-neutral-800 text-white rounded-md "
+              className="w-full px-4 py-2 hover:bg-transparent border-2 border-black hover:text-black transition-all bg-neutral-800 text-white rounded-md"
             >
               Sign Up
             </button>
@@ -117,12 +126,13 @@ const Signup = () => {
           className="w-full hover:bg-slate-100 flex items-center justify-evenly px-4 py-2 bg-transparent border border-gray-500 text-gray-500 rounded-md focus:outline-none focus:bg-gray-100"
         >
           <FcGoogle size={25} className="-mr-20" />
-          Sign Up with Google
+
+          <span>Sign Up with Google</span>
         </button>
         <p className="mt-5 text-center text-gray-600">
-          Don't have an account?{" "}
+          Already have an account?{" "}
           <Link to="/" className="underline text-blue-500">
-            Sign Up
+            Sign In
           </Link>
         </p>
       </div>

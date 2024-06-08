@@ -7,10 +7,9 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { FcGoogle } from "react-icons/fc";
 
 const firebaseConfig = {
-  
+
 };
 
 // Initialize Firebase
@@ -37,7 +36,18 @@ const Signin = () => {
       navigate("/home");
     } catch (error) {
       console.error(error);
-      setError("Email/Password sign-in failed");
+      if (
+        error.code === "auth/user-not-found" ||
+        error.code === "auth/wrong-password"
+      ) {
+        setError("Invalid email or password.");
+      } else if (error.code === "auth/invalid-credential") {
+        setError("Invalid credentials. Please check your email and password.");
+      } else if (error.code === "auth/too-many-requests") {
+        setError("Too many sign-in attempts. Please try again later.");
+      } else {
+        setError("Sign in failed. Please try again later.");
+      }
     }
   };
 
@@ -112,8 +122,6 @@ const Signin = () => {
           onClick={handleGoogleSignIn}
           className="w-full hover:bg-slate-100 flex items-center justify-evenly px-4 py-2 bg-transparent border border-gray-500 text-gray-500 rounded-md focus:outline-none focus:bg-gray-100"
         >
-          <FcGoogle size={25} className="-mr-20" />
-
           <span>Sign In with Google</span>
         </button>
         <p className="mt-5 text-center text-gray-600">
