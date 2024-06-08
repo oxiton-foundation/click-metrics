@@ -34,9 +34,9 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Template />}>
-          <Route path="/" element={<Signin />} />
+          <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/links" element={<Links />} />
           <Route path="/qr" element={<QrCodes url="www.google.com" />} />
           <Route path="/link/in/bio" element={<LinkInBio />} />

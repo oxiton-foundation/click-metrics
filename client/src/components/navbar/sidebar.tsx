@@ -44,7 +44,7 @@ const Sidebar = () => {
             <hr className="my-4" />
             <div className="flex flex-col gap-3">
               <NavLink
-                to="/home"
+                to="/"
                 className={({ isActive }) =>
                   `px-4 py-3 rounded-md text-sm font-medium flex items-center gap-2 ${
                     isActive
