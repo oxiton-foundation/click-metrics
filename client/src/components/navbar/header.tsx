@@ -12,7 +12,7 @@ const Header = () => {
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
     setUser(storedUser);
-  }, []);
+  });
 
   const closeProfileDropdown = () => {
     setDropdownIsActive(false);

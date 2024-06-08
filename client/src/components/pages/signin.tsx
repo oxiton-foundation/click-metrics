@@ -7,6 +7,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
+import { FcGoogle } from "react-icons/fc";
 
 const firebaseConfig = {
 
@@ -65,7 +66,13 @@ const Signin = () => {
       navigate("/home");
     } catch (error) {
       console.error(error);
-      setError("Google sign-in failed");
+      if (error.code === "auth/popup-closed-by-user") {
+        setError("Google sign-in popup closed by user.");
+      } else if (error.code === "auth/cancelled-popup-request") {
+        setError("Google sign-in popup request cancelled.");
+      } else {
+        setError("Google sign-in failed.");
+      }
     }
   };
 
@@ -122,6 +129,8 @@ const Signin = () => {
           onClick={handleGoogleSignIn}
           className="w-full hover:bg-slate-100 flex items-center justify-evenly px-4 py-2 bg-transparent border border-gray-500 text-gray-500 rounded-md focus:outline-none focus:bg-gray-100"
         >
+          {" "}
+          <FcGoogle size={25} className="-mr-20" />
           <span>Sign In with Google</span>
         </button>
         <p className="mt-5 text-center text-gray-600">
