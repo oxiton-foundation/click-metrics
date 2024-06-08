@@ -39,7 +39,7 @@ const Links = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="https://example.com/my-long-url"
-          className="border p-2 w-full border-gray-300"
+          className="border p-2 w-full border-gray-300 bg-white"
         />
         <Button className="mt-4" onClick={handleSubmit}>
           Generate short link
