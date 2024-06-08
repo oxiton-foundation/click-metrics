@@ -9,14 +9,12 @@ import {
 } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 
-import firebaseConfig from "./firebase.config.js";
+import auth from "./firebase.config.js";
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 
 const Signup = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(import.meta.env.VITE_APP_EMAIL);
+  const [password, setPassword] = useState(import.meta.env.VITE_APP_PASSWORD);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 

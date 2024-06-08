@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { initializeApp } from "firebase/app";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -9,15 +8,11 @@ import {
 } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 
-import firebaseConfig from "./firebase.config.js";
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import auth from "./firebase.config.js";
 
 const Signin = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(import.meta.env.VITE_APP_EMAIL);
+  const [password, setPassword] = useState(import.meta.env.VITE_APP_PASSWORD);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
