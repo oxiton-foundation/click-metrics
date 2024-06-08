@@ -1,4 +1,6 @@
-.container body {
+/* App.css */
+
+ .container body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +51,8 @@
   .form_container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
     width: 100%;
     text-align: left;
   }
@@ -69,18 +72,14 @@
   }
   
   .form_container button {
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     color: #fff;
     background-color: #007bff;
     cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-    width: 200px;
-    /* display:flex ; */
-    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
   }
   
   .form_container button:hover {
@@ -89,5 +88,12 @@
   
   .form_container button:active {
     transform: scale(0.98);
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
   }
   
