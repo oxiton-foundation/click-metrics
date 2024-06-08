@@ -9,16 +9,7 @@ import {
 } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDO-GZokfn_jamwH6kCaUCU2QsLdkHh1ko",
-  authDomain: "girlscript-d1844.firebaseapp.com",
-  projectId: "girlscript-d1844",
-  storageBucket: "girlscript-d1844.appspot.com",
-  messagingSenderId: "473207098715",
-  appId: "1:473207098715:web:c2117db27ea6d97502de7e",
-  measurementId: "G-6K54S7CXHE",
-};
-
+import firebaseConfig from "./firebase.config.js";
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
