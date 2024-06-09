@@ -16,7 +16,7 @@ const Theme = () => {
                         Bitly powers hundreds of thousands of Links-in-bios for creators and bussinesses of all kinds. Take a look at these Link-in-bio examples!
                     </p>
                     <div className="flex flex-wrap pb-10">
-                        <div className="grid grid-cols-3 gap-y-5 gap-x-3">
+                        <div className="grid sm:grid-cols-2 xl:grid-cols-5 md:grid-cols-3 gap-y-5 gap-x-3">
                             {SlideCards.map((slide, id) => (
                                 <div key={id} className="inline-block px-2">
                                     <div
