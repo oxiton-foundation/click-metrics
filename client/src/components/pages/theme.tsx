@@ -1,24 +1,26 @@
 import { Button } from 'antd';
 import { SlideCards } from '../themes/slides';
 import { Label } from '../ui/label';
+import { FacebookIcon, InstagramIcon, LinkedinIcon, ThreadsIcon } from '@/assets/icons';
+import { Link } from 'react-router-dom';
 
 const Theme = () => {
     return (
         <>
-            <div className="container mx-auto md:px-0">
+            <div className="container mx-auto px-4 md:px-0">
                 <div className="flex flex-col gap-9 bg-white p-8 md:p-12">
-                    <Label className="text-4xl text-center font-bold" htmlFor="url">
+                    <Label className="text-4xl font-bold" htmlFor="url">
                         Link-in-bio Themes
                     </Label>
-                    <p className="text-gray-600 mx-2">
+                    <p className="text-gray-600 mx-1">
                         Bitly powers hundreds of thousands of Links-in-bios for creators and bussinesses of all kinds. Take a look at these Link-in-bio examples!
                     </p>
-                    <div className="flex flex-wrap">
+                    <div className="flex flex-wrap pb-10">
                         <div className="grid grid-cols-3 gap-y-5 gap-x-3">
                             {SlideCards.map((slide, id) => (
                                 <div key={id} className="inline-block px-2">
                                     <div
-                                        className="px-4 py-4 w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md b hover:shadow-xl transition-shadow duration-300 ease-in-out"
+                                        className="px-4 py-4 w-64 h-96 max-w-xs overflow-hidden rounded-lg shadow-md b hover:shadow-xl transition-shadow duration-300 ease-in-out"
                                         style={{
                                             backgroundImage: slide.backgroundImage,
                                             backgroundSize: 'cover',
@@ -27,21 +29,33 @@ const Theme = () => {
                                             backdropFilter: 'blur(12px)',
                                         }}
                                     >
-                                        <div className="px-16 py-14">
-                                            <Button className="px-4 py-5 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-3xl border-none text-white font-bold text-xl" onClick={
+                                        <div className="bg-black bg-opacity-50 justify-center rounded-md h-16 my-6">
+                                            <Link to="/theme"><h1 className="py-5 text-white font-bold text-xl text-center shadow-md b hover:shadow-2xl transition-shadow duration-300 ease-in-out">{slide.title}</h1></Link>
+                                        </div>
+                                        <div className="px-12 py-5">
+                                            <Button className="flex mb-2 px-6 py-5 w-32 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-3xl text-white text-sm" onClick={
                                                 () => (window.alert("Backend not implemented yet"))
                                             }>
-                                                {slide.title}
+                                                <FacebookIcon />
+                                                Facebook
                                             </Button>
-                                            <Button className="my-2 px-4 py-5 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-3xl border-none text-white font-bold text-xl" onClick={
+                                            <Button className="flex mb-2 px-6 py-5 w-32 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-3xl text-white text-sm" onClick={
                                                 () => (window.alert("Backend not implemented yet"))
                                             }>
-                                                {slide.title}
+                                                <InstagramIcon />
+                                                Instagram
                                             </Button>
-                                            <Button className="px-4 py-5 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-3xl border-none text-white font-bold text-xl" onClick={
+                                            <Button className="flex mb-2 px-6 py-5 w-32 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-3xl text-white text-sm" onClick={
                                                 () => (window.alert("Backend not implemented yet"))
                                             }>
-                                                {slide.title}
+                                                <LinkedinIcon />
+                                                Linkedin
+                                            </Button>
+                                            <Button className="flex mb-2 px-6 py-5 w-32 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-3xl text-white text-sm" onClick={
+                                                () => (window.alert("Backend not implemented yet"))
+                                            }>
+                                                <ThreadsIcon />
+                                                Threads
                                             </Button>
                                         </div>
                                     </div>
