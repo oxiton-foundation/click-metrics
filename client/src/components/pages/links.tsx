@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Button } from '../ui'; // Ensure Button is properly imported
 import { message } from 'antd';
 
+
 const Links = () => {
   const [inputValue, setInputValue] = useState('');
   const [shortUrl, setShortUrl] = useState('');
@@ -30,6 +31,21 @@ const Links = () => {
     window.open(shortUrl, '_blank');
   };
 
+  // const handleCopyToClipboard = () => {
+  //   navigator.clipboard.writeText(shortUrl);
+  //   message.success('URL copied to clipboard');
+  // };
+
+  const handleCopyToClipboard = () => {
+    if (shortUrl) {
+      navigator.clipboard.writeText(shortUrl);
+      message.success('URL copied to clipboard');
+    } else {
+      message.error('No URL available to copy');
+    }
+  };
+  
+
   return (
     <div className="flex justify-around p-10">
       <div className="max:w-1/3 p-4 bg-white shadow-md rounded-lg text-center mt-10">
@@ -41,19 +57,21 @@ const Links = () => {
           placeholder="https://example.com/my-long-url"
           className="border p-2 w-full border-gray-300 bg-white"
         />
-        <Button className="mt-4" onClick={handleSubmit}>
+        
+       <Button className="mt-4" onClick={handleSubmit}>
           Generate short link
         </Button>
-        {shortUrl && (
-          <div className="mt-4">
-            <h3 className="text-lg font-semibold">Shortened URL</h3>
-            <p className="text-blue-500 cursor-pointer" onClick={handleNavigate}>
-              {shortUrl}
-            </p>
-          </div>
-        )}
+        <i className="fa-solid fa-clone" style={{ marginLeft: '15px' }} onClick={handleCopyToClipboard}></i>
+        {shortUrl && shortUrl !== '' && (
+  <div className="relative mt-4">
+    <h3 className="text-lg font-semibold">Shortened URL</h3>
+    <p className="text-blue-500 cursor-pointer" onClick={handleNavigate}>
+      {shortUrl}
+    </p>
+  </div>
+)}
       </div>
     </div>
   );
 };
- export default Links
+export default Links;
