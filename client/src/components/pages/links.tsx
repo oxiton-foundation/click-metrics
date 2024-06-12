@@ -31,11 +31,6 @@ const Links = () => {
     window.open(shortUrl, '_blank');
   };
 
-  // const handleCopyToClipboard = () => {
-  //   navigator.clipboard.writeText(shortUrl);
-  //   message.success('URL copied to clipboard');
-  // };
-
   const handleCopyToClipboard = () => {
     if (shortUrl) {
       navigator.clipboard.writeText(shortUrl);
@@ -50,6 +45,7 @@ const Links = () => {
     <div className="flex justify-around p-10">
       <div className="max:w-1/3 p-4 bg-white shadow-md rounded-lg text-center mt-10">
         <h2 className="text-2xl font-bold mb-4">Enter URL</h2>
+        <div className='flex items-center'>
         <input
           type="text"
           value={inputValue}
@@ -57,7 +53,13 @@ const Links = () => {
           placeholder="https://example.com/my-long-url"
           className="border p-2 w-full border-gray-300 bg-white"
         />
-        
+        {shortUrl && ( // Show copy button only when shortUrl exists
+            <i
+              className="fa-solid fa-clone cursor-pointer ml-2"
+              onClick={handleCopyToClipboard}
+            ></i>
+          )}
+          </div>
        <Button className="mt-4" onClick={handleSubmit}>
           Generate short link
         </Button>
@@ -67,10 +69,8 @@ const Links = () => {
     <p className="text-blue-500 cursor-pointer" onClick={handleNavigate}>
       {shortUrl}
     </p>
-        <i className="fa-solid fa-clone" style={{ marginLeft: '15px' }} onClick={handleCopyToClipboard}></i>
-        
   </div>
-)}
+  )}
       </div>
     </div>
   );
