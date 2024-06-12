@@ -61,13 +61,14 @@ const Links = () => {
        <Button className="mt-4" onClick={handleSubmit}>
           Generate short link
         </Button>
-        <i className="fa-solid fa-clone" style={{ marginLeft: '15px' }} onClick={handleCopyToClipboard}></i>
         {shortUrl && shortUrl !== '' && (
   <div className="relative mt-4">
     <h3 className="text-lg font-semibold">Shortened URL</h3>
     <p className="text-blue-500 cursor-pointer" onClick={handleNavigate}>
       {shortUrl}
     </p>
+        <i className="fa-solid fa-clone" style={{ marginLeft: '15px' }} onClick={handleCopyToClipboard}></i>
+        
   </div>
 )}
       </div>
