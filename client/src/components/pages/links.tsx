@@ -32,14 +32,14 @@ const Links = () => {
 
   return (
     <div className="flex justify-around p-10">
-      <div className="w-1/2 p-4 bg-white shadow-md rounded-lg">
+      <div className="max:w-1/3 p-4 bg-white shadow-md rounded-lg text-center mt-10">
         <h2 className="text-2xl font-bold mb-4">Enter URL</h2>
         <input
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="https://example.com/my-long-url"
-          className="border p-2 w-full border-gray-300"
+          className="border p-2 w-full border-gray-300 bg-white"
         />
         <Button className="mt-4" onClick={handleSubmit}>
           Generate short link
