@@ -58,7 +58,6 @@ Click Matrics is built using the following technologies:
 - Backend: Node.js, Express.js
 - Database: MongoDB
 - QR Code Generation: QR Code Generator API
-- Analytics Tracking: Google Analytics API
 
 ## Contributing
 We welcome contributions from the community! If you'd like to contribute to Click Matrics, please follow these guidelines:
