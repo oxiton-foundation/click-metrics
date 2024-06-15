@@ -38,7 +38,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Home />} />
           <Route path="/links" element={<Links />} />
-          <Route path="/qr" element={<QrCodes url="www.google.com" />} />
+          <Route path="/qr" element={<QrCodes/>} />
           <Route path="/link/in/bio" element={<LinkInBio />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/campaigns" element={<Campaigns />} />
