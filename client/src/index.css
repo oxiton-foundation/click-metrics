@@ -80,9 +80,4 @@
   }
 }
 
-<div class="relative inline-block w-60 h-34">
-  <input type="checkbox" id="toggle" class="hidden">
-  <label for="toggle" class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 transition duration-400 rounded-full">
-    <div class="absolute bg-white w-26 h-26 rounded-full transform transition duration-400"></div>
-  </label>
-</div>
+
