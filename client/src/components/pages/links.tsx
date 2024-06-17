@@ -51,7 +51,7 @@ const Links = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="https://example.com/my-long-url"
-          className="border p-2 w-full border-gray-300 bg-white"
+          className="border p-5 w-full border-gray-300 bg-white text-xl"
         />
         {shortUrl && ( // Show copy button only when shortUrl exists
             <i
@@ -59,6 +59,7 @@ const Links = () => {
               onClick={handleCopyToClipboard}
             ></i>
           )}
+          
           </div>
        <Button className="mt-4" onClick={handleSubmit}>
           Generate short link
