@@ -52,13 +52,12 @@ http://localhost:5173/
 5. **Customize URLs:** Optionally, customize shortened URLs with user-defined aliases for enhanced branding.
 6. **Export Reports:** Export analytics reports for further analysis or sharing.
 
-## Technologies Used
+## Technologies Used 
 Click Matrics is built using the following technologies:
-- Frontend: HTML, CSS, JavaScript
+- Frontend: React
 - Backend: Node.js, Express.js
 - Database: MongoDB
 - QR Code Generation: QR Code Generator API
-- Analytics Tracking: Google Analytics API
 
 ## Contributing
 We welcome contributions from the community! If you'd like to contribute to Click Matrics, please follow these guidelines:
