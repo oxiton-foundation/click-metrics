@@ -1,30 +1,16 @@
 import React, { useState } from "react";
 import { message } from "antd";
 import defaultQr from "../../assets/qrcode.png";
-// import { set } from "react-hook-form";
+import { ImageFormatType, QrPropsType } from "../../types/qr-code";
 
 const Qrcode: React.FC = () => {
-  type ImageFormats = {
-    png: string;
-    jpg: string;
-    jpeg: string;
-    svg: string;
-  };
-  type QrPropsFormats = {
-    qrinput: string;
-    background: string;
-    foreground: string;
-    margin: number;
-    format: string;
-    size: string;
-  };
-  const [img, setImg] = useState<ImageFormats>({
+  const [img, setImg] = useState<ImageFormatType>({
     png: defaultQr,
     jpg: defaultQr,
     jpeg: defaultQr,
     svg: defaultQr,
   });
-  const [QrProps, setQrProps] = useState<QrPropsFormats>({
+  const [QrProps, setQrProps] = useState<QrPropsType>({
     qrinput: "",
     background: "#ffffff",
     foreground: "#000000",
@@ -32,6 +18,7 @@ const Qrcode: React.FC = () => {
     format: "png",
     size: "150x150",
   });
+  const [inputCharacters, setInputCharacters] = useState<number>(0);
 
   const generateQR = async () => {
     try {
@@ -39,9 +26,9 @@ const Qrcode: React.FC = () => {
         message.error("Input cannot be empty");
         return;
       }
-      const formats: (keyof ImageFormats)[] = ["png", "jpg", "jpeg", "svg"];
+      const formats: (keyof ImageFormatType)[] = ["png", "jpg", "jpeg", "svg"];
 
-      let images: ImageFormats = {
+      let images: ImageFormatType = {
         png: "",
         jpg: "",
         jpeg: "",
@@ -109,12 +96,21 @@ const Qrcode: React.FC = () => {
                 id="url"
                 type="text"
                 placeholder="Enter any text or website Url"
-                className="w-full p-2 border-2 rounded mt-2 bg-white"
+                className="w-full p-2 border-2 rounded my-2 bg-white"
                 value={QrProps.qrinput}
-                onChange={(e) =>
-                  setQrProps({ ...QrProps, qrinput: e.target.value })
-                }
+                onChange={(e) => {
+                  setQrProps({ ...QrProps, qrinput: e.target.value });
+                  setInputCharacters(e.target.value.length);
+                }}
+                maxLength={1000}
               />
+              <p
+                className={`text-right text-sm ${
+                  inputCharacters == 1000 ? "text-[#df3d3d]" : "text-[#969696]"
+                }`}
+              >
+                {inputCharacters}/1000
+              </p>
             </div>
             <div className="mt-6">
               <label className="block text-lg font-semibold">
@@ -167,7 +163,7 @@ const Qrcode: React.FC = () => {
             </div>
 
             <div className="mt-6 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-              <div className="w-[50%]">
+              <div className="w-full md:w-1/2">
                 <label className="block text-lg font-semibold">
                   Select Size
                 </label>
@@ -190,7 +186,7 @@ const Qrcode: React.FC = () => {
                   <option value={"1000x1000"}>1000x1000</option>
                 </select>
               </div>
-              <div className="w-[50%]">
+              <div className="w-full md:w-1/2">
                 <label className="block text-lg font-semibold">
                   Set Margin
                 </label>
@@ -241,7 +237,7 @@ const Qrcode: React.FC = () => {
               <button
                 className="w-[200px] flex gap-2 items-center justify-center bg-[#20954b] text-white px-4 py-2 rounded"
                 onClick={() =>
-                  downloadQR(img[QrProps.format as keyof ImageFormats])
+                  downloadQR(img[QrProps.format as keyof ImageFormatType])
                 }
               >
                 <svg
