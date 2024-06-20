@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Button } from '../ui'; // Ensure Button is properly imported
+import { Button } from "@/components/ui/button"; // Ensure Button is properly imported
+import { Input } from "@/components/ui/input";
 import { message } from 'antd';
 
 const Links = () => {
@@ -32,9 +33,9 @@ const Links = () => {
 
   return (
     <div className="flex justify-around p-10">
-      <div className="max:w-1/3 p-4 bg-white shadow-md rounded-lg text-center mt-10">
+      <div className="w-1/3 p-4 bg-white shadow-md rounded-lg text-center mt-10">
         <h2 className="text-2xl font-bold mb-4">Enter URL</h2>
-        <input
+        <Input
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
