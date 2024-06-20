@@ -37,7 +37,7 @@ const Search = () => {
         className="fa-solid fa-magnifying-glass text-[#71809f] cursor-pointer"
         onClick={handleIconClick}
       ></i>
-      <input
+       <input
         type="text"
         className={`bg-[#f4f6fa] outline-none rounded-md w-full transition-all duration-200 
         ${

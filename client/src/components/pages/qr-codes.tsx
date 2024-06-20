@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { message } from "antd";
 import defaultQr from "../../assets/qrcode.png";
 import { ImageFormatType, QrPropsType } from "../../types/qr-code";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Dropdown } from "@/components/ui/dropdown";
 
 const Qrcode: React.FC = () => {
   const [img, setImg] = useState<ImageFormatType>({
@@ -89,10 +93,10 @@ const Qrcode: React.FC = () => {
         <div className="flex flex-wrap w-full justify-center">
           <div className="w-[50%] min-w-[375px]">
             <div className="mt-6">
-              <label className="block text-lg font-semibold">
+              <Label htmlFor="url" className="block text-lg font-semibold">
                 <span className="inline-block mr-2">🔗</span>Enter Your Url
-              </label>
-              <input
+              </Label>
+              <Input
                 id="url"
                 type="text"
                 placeholder="Enter any text or website Url"
@@ -113,48 +117,48 @@ const Qrcode: React.FC = () => {
               </p>
             </div>
             <div className="mt-6">
-              <label className="block text-lg font-semibold">
+              <Label className="block text-lg font-semibold">
                 <span className="inline-block mr-2">🖌️</span>Select Color
-              </label>
+              </Label>
               <div className="flex space-x-4 mt-2">
                 <div className="w-[50%]">
-                  <label className="block">Background</label>
+                  <Label htmlFor="background">Background</Label>
                   <div
                     style={{ backgroundColor: `${QrProps.background}` }}
                     className={`border-2 rounded-md`}
                   >
-                    <input
+                    <Input
+                      id="background"
+                      type="color"
+                      value={QrProps.background}
                       onChange={(e) => {
                         setQrProps({
                           ...QrProps,
                           background: e.target.value,
                         });
                       }}
-                      value={QrProps.background}
-                      id="background"
-                      type="color"
-                      className=" w-full rounded opacity-0"
+                      className="w-full rounded opacity-0"
                     />
                   </div>
                   <p className="text-right">{QrProps.background}</p>
                 </div>
                 <div className="w-[50%]">
-                  <label className="block">Foreground</label>
+                    <Label htmlFor="foreground">Foreground</Label>
                   <div
                     style={{ backgroundColor: `${QrProps.foreground}` }}
                     className={`border-2 rounded-md`}
                   >
-                    <input
+                    <Input
                       id="foreground"
+                      type="color"
+                      value={QrProps.foreground}
                       onChange={(e) => {
                         setQrProps({
                           ...QrProps,
                           foreground: e.target.value,
                         });
                       }}
-                      type="color"
-                      value={QrProps.foreground}
-                      className=" w-full rounded opacity-0"
+                      className="w-full rounded opacity-0"
                     />
                   </div>
                   <p className="text-right">{QrProps.foreground}</p>
@@ -164,64 +168,38 @@ const Qrcode: React.FC = () => {
 
             <div className="mt-6 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
               <div className="w-full md:w-1/2">
-                <label className="block text-lg font-semibold">
+                <Label htmlFor="size" className="block text-lg font-semibold">
                   Select Size
-                </label>
-                <select
-                  id="size"
+                </Label>
+                <Dropdown
+                  options={["150x150", "200x200", 
+                    "300x300", "400x400", 
+                    "500x500", "600x600", 
+                    "700x700", "800x800", 
+                    "900x900", "1000x1000"]}
+                  value={QrProps.size}
+                  onChange={(value) => setQrProps({ ...QrProps, size: value })}
                   className="w-full p-2 border-2 rounded bg-white"
-                  onChange={(e) => {
-                    setQrProps({ ...QrProps, size: e.target.value });
-                  }}
-                >
-                  <option value={"150x150"}>150x150</option>
-                  <option value={"200x200"}>200x200</option>
-                  <option value={"300x300"}>300x300</option>
-                  <option value={"400x400"}>400x400</option>
-                  <option value={"500x500"}>500x500</option>
-                  <option value={"600x600"}>600x600</option>
-                  <option value={"700x700"}>700x700</option>
-                  <option value={"800x800"}>800x800</option>
-                  <option value={"900x900"}>900x900</option>
-                  <option value={"1000x1000"}>1000x1000</option>
-                </select>
+                />
               </div>
               <div className="w-full md:w-1/2">
-                <label className="block text-lg font-semibold">
+                <Label htmlFor="margin" className="block text-lg font-semibold">
                   Set Margin
-                </label>
-                <select
-                  id="margin"
+                </Label>
+                <Dropdown
+                  options={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+                  value={QrProps.margin.toString()}
+                  onChange={(value) => setQrProps({ ...QrProps, margin: parseInt(value) })}
                   className="w-full p-2 border-2 rounded bg-white"
-                  onChange={(e) => {
-                    setQrProps({
-                      ...QrProps,
-                      margin: parseInt(e.target.value),
-                    });
-                  }}
-                >
-                  <option value={"1"}>1</option>
-                  <option value={"2"}>2</option>
-                  <option value={"3"}>3</option>
-                  <option value={"4"}>4</option>
-                  <option value={"5"}>5</option>
-                  <option value={"6"}>6</option>
-                  <option value={"7"}>7</option>
-                  <option value={"8"}>8</option>
-                  <option value={"9"}>9</option>
-                  <option value={"10"}>10</option>
-                </select>
+                />
               </div>
             </div>
           </div>
           <div className="mt-6 w-[50%] min-w-[375px] flex flex-col items-center justify-between">
             <div className="flex flex-col items-center gap-4">
-              <button
-                onClick={generateQR}
-                className="px-4 text-[21px] py-2 bg-blue-500 text-white rounded"
-              >
-                Generate QR Code
-              </button>
+               <Button onClick={generateQR} className="px-4 text-[21px] py-2 bg-blue-500 text-white rounded">
+                  Generate QR Code
+               </Button>
               {img.png && (
                 <img
                   src={img.png}
@@ -234,11 +212,9 @@ const Qrcode: React.FC = () => {
                 />
               )}
 
-              <button
-                className="w-[200px] flex gap-2 items-center justify-center bg-[#20954b] text-white px-4 py-2 rounded"
-                onClick={() =>
-                  downloadQR(img[QrProps.format as keyof ImageFormatType])
-                }
+              <Button
+                 onClick={() => downloadQR(img[QrProps.format as keyof ImageFormatType])}
+                 className="w-[200px] flex gap-2 items-center justify-center bg-[#20954b] text-white px-4 py-2 rounded"
               >
                 <svg
                   width="20"
@@ -257,57 +233,36 @@ const Qrcode: React.FC = () => {
                   />
                 </svg>
                 Download
-              </button>
+              </Button>
 
               <div className="flex space-x-2 mt-2">
-                <button
-                  className={`px-2 py-1 border rounded ${
-                    QrProps.format == "png"
-                      ? "text-white bg-black"
-                      : "hover:bg-[#efefef]"
-                  }`}
-                  onClick={() => {
-                    setQrProps({ ...QrProps, format: "png" });
-                  }}
+                <Button
+                   variant={QrProps.format === "png" ? "default" : "outline"}
+                   onClick={() => {
+                     setQrProps({ ...QrProps, format: "png" });
+                   }}
+                   className="px-2 py-1 border rounded"
                 >
                   png
-                </button>
-                <button
-                  className={`px-2 py-1 border rounded ${
-                    QrProps.format == "jpg"
-                      ? "text-white bg-black"
-                      : "hover:bg-[#efefef]"
-                  }`}
-                  onClick={() => {
-                    setQrProps({ ...QrProps, format: "jpg" });
-                  }}
+                </Button>
+                <Button
+                   variant={QrProps.format === "jpeg" ? "default" : "outline"}
+                   onClick={() => {
+                     setQrProps({ ...QrProps, format: "jpeg" });
+                   }}
+                   className="px-2 py-1 border rounded"
                 >
-                  jpg
-                </button>
-                <button
-                  className={`px-2 py-1 border rounded ${
-                    QrProps.format == "jpeg"
-                      ? "text-white bg-black"
-                      : "hover:bg-[#efefef]"
-                  }`}
-                  onClick={() => {
-                    setQrProps({ ...QrProps, format: "jpeg" });
-                  }}
+                   jpeg
+                </Button>
+                <Button
+                   variant={QrProps.format === "svg" ? "default" : "outline"}
+                   onClick={() => {
+                     setQrProps({ ...QrProps, format: "svg" });
+                   }}
+                   className="px-2 py-1 border rounded"
                 >
-                  jpeg
-                </button>
-                <button
-                  className={`px-2 py-1 border rounded ${
-                    QrProps.format == "svg"
-                      ? "text-white bg-black"
-                      : "hover:bg-[#efefef]"
-                  }`}
-                  onClick={() => {
-                    setQrProps({ ...QrProps, format: "svg" });
-                  }}
-                >
-                  svg
-                </button>
+                   svg
+                </Button>
               </div>
             </div>
           </div>
