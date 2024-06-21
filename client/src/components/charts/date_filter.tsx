@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ReactNode } from "react";
 import data from "../charts/chart_data.json";
 import FilteredDataContext from "./Filter_context";
-import { Button } from "../ui";
+import { Button } from "@/components/ui/button";
 
 interface OverTime {
   date: string;
