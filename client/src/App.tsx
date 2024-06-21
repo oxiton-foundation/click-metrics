@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Template from "./components/navbar/template"
 import Theme from "./components/pages/theme";
 import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings, Help, NotFoundPage } from "./components/pages/index"
-import Loader from "./components/ui/Loader";
+import Loader from "./components/loader/Loader";
 
 function App() {
   const [loading, setLoading] = useState(true);
