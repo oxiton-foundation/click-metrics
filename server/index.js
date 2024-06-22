@@ -4,6 +4,10 @@ const urlRoute = require("./src/routes/url");
 const URL = require("./src/models/url");
 const cors = require("cors");
 
+require('dotenv').config();
+
+
+
 const app = express();
 const PORT = 8001;
 
@@ -35,5 +39,11 @@ app.get("/:shortId", async (req, res) => {
     res.status(404).json({ error: "URL not found" });
   }
 });
+
+
+//authetication code
+const router=require("./src/routes/auth-router")
+
+app.use("/api/auth",router)
 
 app.listen(PORT, () => console.log(`Server started at PORT: ${PORT}`));
