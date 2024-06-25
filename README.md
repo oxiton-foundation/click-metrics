@@ -54,10 +54,10 @@ http://localhost:5173/
 
 ## Technologies Used 
 Click Matrics is built using the following technologies:
-- Frontend: React, Typescript
-- Backend: Node.js, Express.js
-- Database: MongoDB
-- QR Code Generation: QR Code Generator API
+- **Frontend:** React, Typescript
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **QR Code Generation:** QR Code Generator API
 
 ## Contributing
 We welcome contributions from the community! If you'd like to contribute to Click Matrics, please follow these guidelines:
