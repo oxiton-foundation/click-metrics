@@ -54,7 +54,7 @@ http://localhost:5173/
 
 ## Technologies Used 
 Click Matrics is built using the following technologies:
-- Frontend: React
+- Frontend: React, Typescript
 - Backend: Node.js, Express.js
 - Database: MongoDB
 - QR Code Generation: QR Code Generator API
