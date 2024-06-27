@@ -1,10 +1,14 @@
+require('dotenv').config();
 const express = require("express");
 const { connectToMongoDB } = require("./connect");
 const urlRoute = require("./src/routes/url");
 const URL = require("./src/models/url");
 const cors = require("cors");
 
-require('dotenv').config();
+const firebaseAdmin = require("./src/Firebase/firebase"); // Import Firebase Admin SDK
+const { getAuth } = require("firebase-admin/auth");
+
+
 
 
 
