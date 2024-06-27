@@ -1,4 +1,4 @@
-const { admin, db } = require("../firebase/firebase");
+const { admin, db } = require("../Firebase/firebase");
 const bcrypt = require("bcrypt");
 
 const register = async (req, res) => {
