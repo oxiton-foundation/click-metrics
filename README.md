@@ -1,5 +1,6 @@
 ﻿# Click Matrics
 
+
 ## Introduction
 Click Matrics is a URL shortening and analytics platform designed to streamline the process of generating short URLs, creating QR codes, and tracking detailed analytics for each link. With Click Matrics, users can easily create short URLs for their long links, share them confidently across various channels, and gain valuable insights into the performance of their links through comprehensive analytics.
 
