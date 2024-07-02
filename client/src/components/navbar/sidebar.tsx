@@ -63,7 +63,7 @@ const Sidebar = () => {
   );
 
   return (
-    <div className="flex fixed top-0 left-0 z-[100] lg:static h-[100svh]">
+    <div className="flex fixed top-0 left-0 z-[100] lg:static h-[100svh] dark:bg-[#0D203D] dark:text-white">
       {isSidebarVisible && (
         <div
           className="overlay fixed top-[-50vh] left-[-50vw] z-[0] w-[200vw] h-[200vh] block lg:hidden bg-[#00000079] cursor-pointer"

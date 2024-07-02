@@ -32,7 +32,7 @@ const Links = () => {
   };
 
   return (
-    <div className="flex justify-around p-10">
+    <div className="flex justify-around p-10 dark:bg-[#0D203D] dark:text-white">
       <div className="w-1/3 p-4 bg-white shadow-md rounded-lg text-center mt-10">
         <h2 className="text-2xl font-bold mb-4">Enter URL</h2>
         <Input
