@@ -5,7 +5,7 @@ import HomeIntro from "./homeintro";
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen dark:bg-black dark:text-white">
       <HomeIntro />
       <div className="p-5">
         <h1 className="text-2xl font-bold text-center mb-6">Your Connections Platform</h1>

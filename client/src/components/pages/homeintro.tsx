@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const HomeIntro: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className="bg-orange-100 m-4 p-4 text-gray-800 py-8 rounded-lg shadow-md">
+    <div className="bg-orange-100 m-4 p-4 text-gray-800 py-8 rounded-lg shadow-md ">
       <header className="text-gray-800 py-6">
         <h1 className="text-4xl font-bold">
           Welcome to <span className="text-orange-500"> CLICK MATRICS</span>
