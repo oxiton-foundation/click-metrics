@@ -63,7 +63,7 @@ const Sidebar = () => {
   );
 
   return (
-    <div className="flex fixed top-0 left-0 z-[100] lg:static h-[100svh] dark:bg-[#0D203D] dark:text-white">
+    <div className="flex fixed top-0 left-0 z-[100] lg:static h-[100svh] dark:bg-black dark:text-white">
       {isSidebarVisible && (
         <div
           className="overlay fixed top-[-50vh] left-[-50vw] z-[0] w-[200vw] h-[200vh] block lg:hidden bg-[#00000079] cursor-pointer"
@@ -90,7 +90,7 @@ const Sidebar = () => {
         </button>
 
         {isSidebarVisible && (
-          <div className="border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4 fixed top-0 left-0 h-full bg-white pt-6 dark:bg-[#0A192F] dark:text-white">
+          <div className="border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4 fixed top-0 left-0 h-full bg-white pt-6 dark:bg-black dark:text-white">
             <div className="w-full flex justify-center mb-6">
               <span className="text-2xl font-bold text-[#0c3ebb]">
                 <a href="/">

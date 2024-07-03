@@ -24,8 +24,8 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-full dark:bg-[#0D203D] dark:text-white">
-        <div className="pt-4 pb-3 px-4 border-b-[1.5px] border-[#dbe0eb] bg-white sticky top-0 z-10 dark:bg-[#0D203D] dark:text-white">
+      <div className="w-full dark:bg-black dark:text-white">
+        <div className="pt-4 pb-3 px-4 border-b-[1.5px] border-[#dbe0eb] bg-white sticky top-0 z-10 dark:bg-black dark:text-white">
           <nav className="flex justify-end ml-12 lg:ml-0 gap-2 lg:gap-6 items-center">
             <Search />
 
