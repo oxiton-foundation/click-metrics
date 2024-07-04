@@ -5,6 +5,7 @@ import Template from "./components/navbar/template"
 import Theme from "./components/pages/theme";
 import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings, Help, NotFoundPage } from "./components/pages/index"
 import Loader from "./components/loader/Loader";
+import CustomQr from "./components/pages/customqr";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/links" element={<Links />} />
           <Route path="/qr" element={<QrCodes/>} />
+          <Route path="/customqr" element={<CustomQr />} />
           <Route path="/link/in/bio" element={<LinkInBio />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/campaigns" element={<Campaigns />} />

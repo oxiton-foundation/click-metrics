@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState } from "react";
 import { message } from "antd";
 import defaultQr from "../../assets/qrcode.png";
 import { ImageFormatType, QrPropsType } from "../../types/qr-code";
@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Dropdown } from "@/components/ui/dropdown";
-import QRCodeGenerator from "../ui/Modal";  // Corrected import path
 
 const Qrcode: React.FC = () => {
   const [img, setImg] = useState<ImageFormatType>({
@@ -25,21 +24,6 @@ const Qrcode: React.FC = () => {
   });
   const [inputCharacters, setInputCharacters] = useState<number>(0);
 
-  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        if (typeof reader.result === 'string') {
-          setQrProps({
-            ...QrProps,
-            background: reader.result,
-          });
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   const generateQR = async () => {
     try {
@@ -215,13 +199,16 @@ const Qrcode: React.FC = () => {
               <Label htmlFor="backgroundImage" className="block text-lg font-semibold">
                 <span className="inline-block mr-2">📷</span>Custom Background Image
               </Label>
-              <Input
+              {/* <Input
                 id="backgroundImage"
                 type="file"
                 accept="image/*"
                 onChange={handleImageChange}
                 className="w-full p-2 border-2 rounded my-2 bg-white"
-              />
+              /> */}
+              <a href="/customqr">
+              <Button className="px-4 text-[21px] py-2 bg-blue-500 text-white rounded">Create QR</Button>
+              </a>
             </div>
           </div>
           <div className="mt-6 w-[50%] min-w-[375px] flex flex-col items-center justify-between">
@@ -240,7 +227,7 @@ const Qrcode: React.FC = () => {
                   alt="QR Code"
                 />   
               )}
-      <QRCodeGenerator inp={QrProps.qrinput} backgroundImage={QrProps.background} />
+      {/* <QRCodeGenerator inp={QrProps.qrinput} backgroundImage={QrProps.background} /> */}
               <Button
                 onClick={() => downloadQR(img[QrProps.format as keyof ImageFormatType])}
                 className="w-[200px] flex gap-2 items-center justify-center bg-[#20954b] text-white px-4 py-2 rounded"
