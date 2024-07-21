@@ -80,7 +80,7 @@ const Sidebar = () => {
           onClick={toggleSidebar}
           className={`fixed top-4 ${
             isSidebarVisible ? "left-[15rem]" : "left-[8px]"
-          } z-50 bg-white text-black px-3 py-2 mr-4 rounded-full h-auto shadow-md transition-width duration-300`}
+          } z-50 bg-white text-black px-3 py-2 mr-4 rounded-full h-auto shadow-md transition-width duration-300 ease-in-out`}
         >
           {isSidebarVisible ? (
             <i className="fa-solid fa-xmark"></i>
@@ -89,40 +89,38 @@ const Sidebar = () => {
           )}
         </button>
 
-        {isSidebarVisible && (
-          <div className="border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4 fixed top-0 left-0 h-full bg-white pt-6">
-            <div className="w-full flex justify-center mb-6">
-              <span className="text-2xl font-bold text-[#0c3ebb]">
-                <a href="/">
-                  <img src={"/click-metrics-logo-edited.png"} alt="LOGO" />
-                </a>
-              </span>
-            </div>
-            <NavLink
-              to="/links"
-              className="block w-full mt-4 mb-2"
-              onClick={() => {
-                window.innerWidth <= 1024 && setIsSidebarVisible(false);
-              }}
-            >
-              <Button className="w-full">Create New</Button>
-            </NavLink>
-
-            <hr className="my-4" />
-
-            <div className="flex flex-col gap-3">
-              {SideBarLinks.map((link, index) => (
-                <SideLink key={index} {...link} />
-              ))}
-              <hr />
-              <SideLink
-                to="/settings"
-                icon="fa-solid fa-gear"
-                label="Settings"
-              />
-            </div>
+        <div
+          className={`border-r-[1.5px] border-[#dbe0eb] min-w-[18rem] px-4 fixed top-0 ${
+            isSidebarVisible ? "left-[0px]" : "left-[-300px]"
+          } h-full bg-white pt-6 transition-all duration-300 ease-in-out`}
+        >
+          <div className="w-full flex justify-center mb-6">
+            <span className="text-2xl font-bold text-[#0c3ebb]">
+              <a href="/">
+                <img src={"/click-metrics-logo-edited.png"} alt="LOGO" />
+              </a>
+            </span>
           </div>
-        )}
+          <NavLink
+            to="/links"
+            className="block w-full mt-4 mb-2"
+            onClick={() => {
+              window.innerWidth <= 1024 && setIsSidebarVisible(false);
+            }}
+          >
+            <Button className="w-full">Create New</Button>
+          </NavLink>
+
+          <hr className="my-4" />
+
+          <div className="flex flex-col gap-3">
+            {SideBarLinks.map((link, index) => (
+              <SideLink key={index} {...link} />
+            ))}
+            <hr />
+            <SideLink to="/settings" icon="fa-solid fa-gear" label="Settings" />
+          </div>
+        </div>
       </div>
 
       <div
