@@ -1,6 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import QrLoader from "../loader/QrLoader";
 import React, { useRef, useState, ChangeEvent } from "react";
 import QRCode from "easyqrcodejs";
 import "tailwindcss/tailwind.css";
@@ -20,6 +21,7 @@ const QrCode: React.FC = () => {
   const [fgColor, setFgColor] = useState<string>("#000000");
   const [size, setSize] = useState<number>(200);
   const [margin, setMargin] = useState<number>(10);
+  const [dotScale, setDotScale] = useState<number>(100);
   const [bgImage, setBgImage] = useState<File | null>(null);
   const [logoImage, setLogoImage] = useState<File | null>(null);
   const bgImageInputRef = useRef<HTMLInputElement>(null);
@@ -44,6 +46,8 @@ const QrCode: React.FC = () => {
         logo: logoImage ? URL.createObjectURL(logoImage) : undefined,
         backgroundImageAlpha: 1,
         autoColor: true,
+        logoBackgroundColor: bgColor,
+        dotScale: dotScale / 100,
       });
     }
     if (qrCodeSvgRef.current) {
@@ -60,6 +64,8 @@ const QrCode: React.FC = () => {
         backgroundImageAlpha: 1,
         autoColor: true,
         drawer: "svg",
+        logoBackgroundColor: bgColor,
+        dotScale: dotScale / 100,
       });
     }
     if (displayQrRef.current) {
@@ -75,6 +81,8 @@ const QrCode: React.FC = () => {
         logo: logoImage ? URL.createObjectURL(logoImage) : undefined,
         backgroundImageAlpha: 1,
         autoColor: true,
+        logoBackgroundColor: bgColor,
+        dotScale: dotScale / 100,
       });
     }
     setTimeout(() => {
@@ -170,8 +178,8 @@ const QrCode: React.FC = () => {
         below. Adjust colors, size, and format to suit your needs, then download
         your QR code instantly for easy sharing.
       </p>
-      <div className="flex flex-wrap w-full justify-center">
-        <div className="w-[50%] min-w-[375px]">
+      <div className="flex flex-wrap-reverse w-full justify-center">
+        <div className="w-[50%] min-w-[375px] mb-14">
           <div className="mt-6">
             <Label htmlFor="url" className="block text-lg font-semibold">
               <span className="inline-block mr-2">🔗</span>Enter Your Url
@@ -224,8 +232,8 @@ const QrCode: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-            <div className="w-full md:w-1/2">
+          <div className="mt-6 flex justify-between w-full gap-4">
+            <div className="w-1/3">
               <Label htmlFor="size" className="block text-lg font-semibold">
                 Select Size
               </Label>
@@ -238,7 +246,7 @@ const QrCode: React.FC = () => {
                 className="w-1/2 p-2 border-2 rounded bg-white"
               />
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="w-1/3">
               <Label htmlFor="margin" className="block text-lg font-semibold">
                 Set Margin
               </Label>
@@ -247,6 +255,19 @@ const QrCode: React.FC = () => {
                 value={margin}
                 onChange={(e) =>
                   setMargin(Math.min(2000, Number(e.target.value)))
+                }
+                className="w-1/2 p-2 border-2 rounded bg-white"
+              />
+            </div>
+            <div className="w-1/3">
+              <Label htmlFor="dotScale" className="block text-lg font-semibold">
+                Set Dot Size
+              </Label>
+              <input
+                type="number"
+                value={dotScale}
+                onChange={(e) =>
+                  setDotScale(Math.min(100, Number(e.target.value)))
                 }
                 className="w-1/2 p-2 border-2 rounded bg-white"
               />
@@ -302,23 +323,23 @@ const QrCode: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="w-[50%] min-w-[375px] flex items-center justify-center relative">
-          <div className="w-full text-center absolute left-0 bottom-[-50px]">
+        <div className="w-[50%] min-w-[375px] min-h-[450px] flex items-center justify-center relative mb-14">
+          <div className="w-full text-center absolute left-0 bottom-[-60px]">
             <span className="text-red-500">*</span>Note: you may need to
             download qr to view its actual size
           </div>
-          <div className="custom-class mt-6 p-6 w-[50%] h-full min-w-[375px] flex flex-col items-center justify-between border-2">
+          <div
+            style={{
+              boxShadow:
+                "rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset",
+            }}
+            className="mt-6 p-6 w-[50%] h-full min-w-[375px] flex flex-col items-center justify-between border-2"
+          >
             <Button onClick={generateQRCode} className="px-12 py-6 text-[20px]">
               Generate QR code
             </Button>
-            <div
-              ref={qrCodeRef}
-              className="mt-4 qr-code-container hidden"
-            ></div>
-            <div
-              ref={qrCodeSvgRef}
-              className="mt-4 qr-code-container hidden"
-            ></div>
+            <div ref={qrCodeRef} className="mt-4 hidden"></div>
+            <div ref={qrCodeSvgRef} className="mt-4 hidden"></div>
             {/* <div className="loader"></div> */}
             <img
               src="/src/assets/default-qr.svg"
@@ -330,7 +351,10 @@ const QrCode: React.FC = () => {
               ref={displayQrRef}
               className={`${generated && !isGenerating ? "mt-4" : "hidden"}`}
             ></div>
-            <div className={`${!isGenerating ? "hidden" : "loader"}`}></div>
+
+            <div className={`${!isGenerating ? "hidden" : "block"}`}>
+              <QrLoader />
+            </div>
 
             <div className="flex items-center gap-8 mt-4">
               <Button
