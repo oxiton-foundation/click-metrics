@@ -22,6 +22,8 @@ const QrCode: React.FC = () => {
   const [margin, setMargin] = useState<number>(10);
   const [bgImage, setBgImage] = useState<File | null>(null);
   const [logoImage, setLogoImage] = useState<File | null>(null);
+  const bgImageInputRef = useRef<HTMLInputElement>(null);
+  const logoImageInputRef = useRef<HTMLInputElement>(null);
 
   const generateQRCode = () => {
     if (!text.trim()) {
@@ -75,9 +77,9 @@ const QrCode: React.FC = () => {
         autoColor: true,
       });
     }
-    message.success("QR code generated successfully!");
     setTimeout(() => {
       setIsGenerating(false);
+      message.success("QR code generated successfully!");
     }, 1000);
     generatedQR();
   };
@@ -92,12 +94,18 @@ const QrCode: React.FC = () => {
       setLogoImage(event.target.files[0]);
     }
   };
-
-  // const downloadQRCode = (format: "png" | "jpeg" | "svg") => {
-  // console.log("downloadQRCode -> format", format);
-  // if (qrCodeRef.current?.innerHTML === "") {
-  //   alert("First Generate QR Code to download.");
-  // }
+  const removeBackgroundImage = () => {
+    setBgImage(null);
+    if (bgImageInputRef.current) {
+      bgImageInputRef.current.value = "";
+    }
+  };
+  const removeLogo = () => {
+    setLogoImage(null);
+    if (logoImageInputRef.current) {
+      logoImageInputRef.current.value = "";
+    }
+  };
   const downloadQRCode = (format: "png" | "jpeg" | "svg") => {
     if (!generated) {
       alert("First Generate QR Code to download.");
@@ -244,7 +252,7 @@ const QrCode: React.FC = () => {
               />
             </div>
           </div>
-          <div className="mt-6">
+          <div className="relative mt-6">
             <Label
               htmlFor="backgroundImage"
               className="block text-lg font-semibold"
@@ -257,10 +265,19 @@ const QrCode: React.FC = () => {
               type="file"
               accept="image/*"
               onChange={handleImageUpload}
+              ref={bgImageInputRef}
               className="w-full p-2 border-2 rounded my-2 bg-white"
             />
+            {bgImage && (
+              <Button
+                onClick={removeBackgroundImage}
+                className="absolute bottom-[-40px] right-0 z-[1] px-2 py-1 leading-0 h-auto bg-transparent border border-[#af2525] text-[#af2525] hover:bg-[#af2525] hover:text-[#ffffff]"
+              >
+                Remove Background
+              </Button>
+            )}
           </div>
-          <div className="mt-6">
+          <div className="relative mt-6">
             <Label
               htmlFor="backgroundImage"
               className="block text-lg font-semibold"
@@ -272,8 +289,17 @@ const QrCode: React.FC = () => {
               type="file"
               accept="image/*"
               onChange={handleLogoUpload}
+              ref={logoImageInputRef}
               className="w-full p-2 border-2 rounded my-2 bg-white"
             />
+            {logoImage && (
+              <Button
+                onClick={removeLogo}
+                className="absolute bottom-[-40px] right-0 z-[1] px-2 py-1 leading-0 h-auto bg-transparent border border-[#af2525] text-[#af2525] hover:bg-[#af2525] hover:text-[#ffffff]"
+              >
+                Remove Logo
+              </Button>
+            )}
           </div>
         </div>
         <div className="w-[50%] min-w-[375px] flex items-center justify-center relative">
