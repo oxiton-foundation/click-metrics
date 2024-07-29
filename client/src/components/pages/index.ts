@@ -9,6 +9,7 @@ import CustomLinks from "./custom-links";
 import Settings from "./settings";
 import Help from "./help";
 import NotFoundPage from "./NoFoundPage";
+import ContactUs from "./contactUs";
 
 export {
     Home,
@@ -20,5 +21,6 @@ export {
     CustomLinks,
     Settings,
     Help,
-    NotFoundPage
+    NotFoundPage,
+    ContactUs
 }

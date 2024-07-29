@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import { useState, useEffect } from "react";
 import Template from "./components/navbar/template"
 import Theme from "./components/pages/theme";
-import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings, Help, NotFoundPage } from "./components/pages/index"
+import { Home, Links, QrCodes, LinkInBio, Analytics, Campaigns, CustomLinks, Settings, Help, NotFoundPage,ContactUs } from "./components/pages/index"
 import Loader from "./components/loader/Loader";
 
 function App() {
@@ -31,6 +31,7 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/help" element={<Help />} />
           <Route path="/theme" element={<Theme />} />
+          <Route path="/contactus" element={<ContactUs />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
