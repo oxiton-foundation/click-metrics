@@ -23,7 +23,7 @@ const SideBarLinks = [
 ];
 
 const Sidebar = () => {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
@@ -97,7 +97,13 @@ const Sidebar = () => {
           <div className="w-full flex justify-center mb-6">
             <span className="text-2xl font-bold text-[#0c3ebb]">
               <a href="/">
-                <img src={"/click-metrics-logo-edited.png"} alt="LOGO" />
+                <div className="w-[190px] h-[93px]">
+                  <img
+                    src={"/click-metrics-logo-edited.png"}
+                    alt="LOGO"
+                    className="w-full h-full"
+                  />
+                </div>
               </a>
             </span>
           </div>
