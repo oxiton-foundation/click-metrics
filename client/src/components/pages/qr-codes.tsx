@@ -6,6 +6,7 @@ import React, { useRef, useState, ChangeEvent } from "react";
 import QRCode from "easyqrcodejs";
 import "tailwindcss/tailwind.css";
 import { message } from "antd";
+import QrSvg from "../../assets/default-qr.svg";
 
 const QrCode: React.FC = () => {
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
@@ -342,7 +343,7 @@ const QrCode: React.FC = () => {
             <div ref={qrCodeSvgRef} className="mt-4 hidden"></div>
             {/* <div className="loader"></div> */}
             <img
-              src="/src/assets/default-qr.svg"
+              src={QrSvg}
               alt="QR Code"
               className={`${!generated ? "w-[200px]" : "hidden"}`}
             />
