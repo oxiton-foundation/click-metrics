@@ -22,7 +22,7 @@ const ProfileDropdown = () => {
     }
 
     const handleHelpClick = () => {
-        navigate('/help'); // Navigate to /help page
+        navigate('/contactus'); // Navigate to /help page
     }
 
     return (
